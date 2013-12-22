@@ -28,7 +28,7 @@ static NSString *const GRPWineListTableViewCellIdentifier = @"GRPWineListTableVi
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	GRPWineListTableViewCell *rtnCell = [tableView dequeueReusableCellWithIdentifier:GRPWineListTableViewCellIdentifier];
-	rtnCell.textLabel.text = [NSString stringWithFormat:@"Cell number: %i", indexPath.row];
+	rtnCell.imageView.image = [UIImage imageNamed:@"images/wineImage.png"];
 	return rtnCell;
 }
 @end

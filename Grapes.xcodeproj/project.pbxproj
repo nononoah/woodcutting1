@@ -28,6 +28,8 @@
 		4FFA913118678DB5003E2791 /* GRPAddWineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA913018678DB5003E2791 /* GRPAddWineViewController.m */; };
 		4FFA913418678F15003E2791 /* UIColor+GRP.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA913318678F15003E2791 /* UIColor+GRP.m */; };
 		4FFA913718678F2B003E2791 /* GRPAppearanceHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA913618678F2B003E2791 /* GRPAppearanceHandler.m */; };
+		4FFA913B1867A5C3003E2791 /* GRPWineImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA913A1867A5C3003E2791 /* GRPWineImageView.m */; };
+		4FFA913E1867A867003E2791 /* GRPRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA913D1867A867003E2791 /* GRPRatingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,10 @@
 		4FFA913318678F15003E2791 /* UIColor+GRP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GRP.m"; sourceTree = "<group>"; };
 		4FFA913518678F2B003E2791 /* GRPAppearanceHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPAppearanceHandler.h; sourceTree = "<group>"; };
 		4FFA913618678F2B003E2791 /* GRPAppearanceHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPAppearanceHandler.m; sourceTree = "<group>"; };
+		4FFA91391867A5C3003E2791 /* GRPWineImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWineImageView.h; sourceTree = "<group>"; };
+		4FFA913A1867A5C3003E2791 /* GRPWineImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWineImageView.m; sourceTree = "<group>"; };
+		4FFA913C1867A867003E2791 /* GRPRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPRatingView.h; sourceTree = "<group>"; };
+		4FFA913D1867A867003E2791 /* GRPRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPRatingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +186,7 @@
 		4FFA9114186784B5003E2791 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4FFA91381867A5AE003E2791 /* Global */,
 				4FFA912018678574003E2791 /* Wine List */,
 			);
 			path = Views;
@@ -271,6 +278,17 @@
 				4FFA913018678DB5003E2791 /* GRPAddWineViewController.m */,
 			);
 			name = "Add Wine";
+			sourceTree = "<group>";
+		};
+		4FFA91381867A5AE003E2791 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				4FFA91391867A5C3003E2791 /* GRPWineImageView.h */,
+				4FFA913A1867A5C3003E2791 /* GRPWineImageView.m */,
+				4FFA913C1867A867003E2791 /* GRPRatingView.h */,
+				4FFA913D1867A867003E2791 /* GRPRatingView.m */,
+			);
+			name = Global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,7 +398,9 @@
 				4FFA90EC186782D4003E2791 /* main.m in Sources */,
 				4FFA9125186785CA003E2791 /* GRPWine.m in Sources */,
 				4FFA913118678DB5003E2791 /* GRPAddWineViewController.m in Sources */,
+				4FFA913E1867A867003E2791 /* GRPRatingView.m in Sources */,
 				4FFA912B18678653003E2791 /* GRPBaseViewController.m in Sources */,
+				4FFA913B1867A5C3003E2791 /* GRPWineImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
