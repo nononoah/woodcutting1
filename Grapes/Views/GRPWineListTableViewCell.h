@@ -11,7 +11,7 @@
 #import "GRPRatingView.h"
 
 @interface GRPWineListTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet GRPWineImageView *imageView;
+@property (weak, nonatomic) IBOutlet GRPWineImageView *wineImageView;
 @property (weak, nonatomic) IBOutlet GRPRatingView *ratingView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;

@@ -6,9 +6,8 @@
 //  Copyright (c) 2013 Woodcutting. All rights reserved.
 //
 
-#import "GRPBaseViewController.h"
+#import <Foundation/Foundation.h>
 
-@interface GRPWineListViewController : GRPBaseViewController <UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface GRPWineListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
