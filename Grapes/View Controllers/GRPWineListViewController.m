@@ -23,8 +23,10 @@ static NSString *const GRPWineListTableViewCellIdentifier = @"GRPWineListTableVi
 {
 	[super viewDidLoad];
 	self.title = @"Your Grapes";
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGrape)];
 }
 
+#pragma mark - UITableView dataSoource and delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	return 10;
@@ -41,7 +43,15 @@ static NSString *const GRPWineListTableViewCellIdentifier = @"GRPWineListTableVi
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	// TODO: Set wine, perform dynamic animation.
+	[self.navigationController pushViewController: [GRPViewControllerFactory wineDetailsViewControllerForWine:nil] animated:YES];
+}
+
+#pragma mark - Navigation actions
+- (void)addGrape
+{
+	// TODO: Set wine, perform dynamic animation.
 	UIViewController *tmpViewController = [GRPViewControllerFactory wineDetailsViewControllerForWine:nil];
-	[self.navigationController pushViewController:tmpViewController animated:YES];
+	UINavigationController *tmpNavigationController = [[UINavigationController alloc] initWithRootViewController:tmpViewController];
+	[self presentViewController:tmpNavigationController animated:YES completion:nil];
 }
 @end
