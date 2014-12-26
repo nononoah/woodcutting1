@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Woodcutting. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "GRPTableViewCell.h"
 #import "GRPWineImageView.h"
 #import "GRPRatingView.h"
 
-@interface GRPReviewTableViewCell : UITableViewCell
+@interface GRPReviewTableViewCell : GRPTableViewCell	
 @property (weak, nonatomic) IBOutlet GRPWineImageView *wineImageView;
 @property (weak, nonatomic) IBOutlet GRPRatingView *ratingView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

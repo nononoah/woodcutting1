@@ -8,6 +8,13 @@
 
 #import "GRPReview+GRP.h"
 
+#import "NSDate+GRP.h"
+
 @implementation GRPReview (GRP)
+
+- (NSString *)dateString
+{
+	return [self.lastModified reviewListDisplayString];
+}
 
 @end

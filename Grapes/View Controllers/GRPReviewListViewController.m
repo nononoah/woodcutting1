@@ -12,6 +12,7 @@
 #import "GRPUserHandler.h"
 #import "FZCDSTableViewController.h"
 
+#import "GRPTableView.h"
 #import "GRPReviewTableViewCell.h"
 
 #import "GRPUser+GRP.h"
@@ -22,7 +23,7 @@ static NSString *const GRPReviewTableViewCellIdentifier = @"GRPReviewTableViewCe
 
 @interface GRPReviewListViewController ()
 @property (strong, nonatomic) IBOutlet FZCDSTableViewController *tableViewController;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet GRPTableView *tableView;
 @end
 
 @implementation GRPReviewListViewController
@@ -32,15 +33,14 @@ static NSString *const GRPReviewTableViewCellIdentifier = @"GRPReviewTableViewCe
 	self.title = @"Your Grapes";
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addReview)];
 	
-	self.tableView.tableFooterView = [UIView new];
-	self.tableView.layoutMargins = UIEdgeInsetsZero;
-	
 	[self configureTableViewController];
 }
 
 - (void)configureTableViewController
 {
 	[self.tableViewController setObject:[GRPUserHandler currentUser] withKeyPath:@"reviews"];
+	self.tableViewController.sortKey = @"lastModified";
+	self.tableViewController.ascendingSort = NO;
 	self.tableViewController.autoResize = YES;
 	self.tableViewController.viewModelBuilder = [self reviewListViewModelBuilder];
 	[self.tableViewController setNeedsUpdateFetchRequest];
@@ -62,6 +62,7 @@ static NSString *const GRPReviewTableViewCellIdentifier = @"GRPReviewTableViewCe
 			[tmpCell.ratingView setRating:tmpReview.rating.integerValue];
 			tmpCell.titleLabel.text = tmpReview.wine.name;
 			[tmpCell.wineImageView setImage:nil];
+			tmpCell.dateLabel.text = [tmpReview dateString];
 		}
 	};
 	rtnAdapter.cellDidSelectBlock =

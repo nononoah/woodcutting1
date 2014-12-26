@@ -16,9 +16,4 @@
 	[super awakeFromNib];
 }
 
-- (UIEdgeInsets)layoutMargins
-{
-	return UIEdgeInsetsZero;
-}
-
 @end

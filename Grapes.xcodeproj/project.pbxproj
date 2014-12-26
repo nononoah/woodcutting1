@@ -74,6 +74,10 @@
 		1D5FF00C1A4DD487002213A6 /* GRPWine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF00B1A4DD487002213A6 /* GRPWine.m */; };
 		1DF5C4B919BCDC820064209C /* GRPReviewDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4B819BCDC820064209C /* GRPReviewDetailsViewController.m */; };
 		1DF5C4BC19BCDEE80064209C /* GRPViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4BB19BCDEE80064209C /* GRPViewControllerFactory.m */; };
+		1DFC7A8C1A4DE27A00646F1A /* NSDate+GRP.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7A8B1A4DE27A00646F1A /* NSDate+GRP.m */; };
+		1DFC7A901A4DE5CC00646F1A /* GRPAdjustableTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7A8F1A4DE5CC00646F1A /* GRPAdjustableTextFieldTableViewCell.m */; };
+		1DFC7A941A4DEAE800646F1A /* GRPTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7A931A4DEAE800646F1A /* GRPTableView.m */; };
+		1DFC7A971A4DEB0600646F1A /* GRPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7A961A4DEB0600646F1A /* GRPTableViewCell.m */; };
 		36B9678AF9CE028350BF237E /* libPods-Grapes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8F471BE6B6D8045422EAA1 /* libPods-Grapes.a */; };
 		4FFA90E0186782D4003E2791 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFA90DF186782D4003E2791 /* Foundation.framework */; };
 		4FFA90E2186782D4003E2791 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFA90E1186782D4003E2791 /* CoreGraphics.framework */; };
@@ -255,6 +259,15 @@
 		1DF5C4B819BCDC820064209C /* GRPReviewDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPReviewDetailsViewController.m; sourceTree = "<group>"; };
 		1DF5C4BA19BCDEE80064209C /* GRPViewControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPViewControllerFactory.h; sourceTree = "<group>"; };
 		1DF5C4BB19BCDEE80064209C /* GRPViewControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPViewControllerFactory.m; sourceTree = "<group>"; };
+		1DFC7A8A1A4DE27A00646F1A /* NSDate+GRP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+GRP.h"; sourceTree = "<group>"; };
+		1DFC7A8B1A4DE27A00646F1A /* NSDate+GRP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+GRP.m"; sourceTree = "<group>"; };
+		1DFC7A8E1A4DE5CC00646F1A /* GRPAdjustableTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPAdjustableTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		1DFC7A8F1A4DE5CC00646F1A /* GRPAdjustableTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPAdjustableTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		1DFC7A911A4DE5F900646F1A /* GRPEditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPEditableTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		1DFC7A921A4DEAE800646F1A /* GRPTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPTableView.h; sourceTree = "<group>"; };
+		1DFC7A931A4DEAE800646F1A /* GRPTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPTableView.m; sourceTree = "<group>"; };
+		1DFC7A951A4DEB0600646F1A /* GRPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPTableViewCell.h; sourceTree = "<group>"; };
+		1DFC7A961A4DEB0600646F1A /* GRPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPTableViewCell.m; sourceTree = "<group>"; };
 		4FFA90DC186782D4003E2791 /* Grapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFA90DF186782D4003E2791 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FFA90E1186782D4003E2791 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -558,6 +571,15 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
+		1DFC7A8D1A4DE52A00646F1A /* Review Details */ = {
+			isa = PBXGroup;
+			children = (
+				1DFC7A8E1A4DE5CC00646F1A /* GRPAdjustableTextFieldTableViewCell.h */,
+				1DFC7A8F1A4DE5CC00646F1A /* GRPAdjustableTextFieldTableViewCell.m */,
+			);
+			name = "Review Details";
+			sourceTree = "<group>";
+		};
 		3981D078A2CB2F6BE92A65F8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,7 +673,8 @@
 			isa = PBXGroup;
 			children = (
 				4FFA91381867A5AE003E2791 /* Global */,
-				4FFA912018678574003E2791 /* Wine List */,
+				4FFA912018678574003E2791 /* Review List */,
+				1DFC7A8D1A4DE52A00646F1A /* Review Details */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -676,6 +699,7 @@
 		4FFA9117186784B5003E2791 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				1DFC7A911A4DE5F900646F1A /* GRPEditableTableViewCell.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -717,6 +741,8 @@
 			children = (
 				4FFA913218678F15003E2791 /* UIColor+GRP.h */,
 				4FFA913318678F15003E2791 /* UIColor+GRP.m */,
+				1DFC7A8A1A4DE27A00646F1A /* NSDate+GRP.h */,
+				1DFC7A8B1A4DE27A00646F1A /* NSDate+GRP.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -730,13 +756,13 @@
 			name = "Review List";
 			sourceTree = "<group>";
 		};
-		4FFA912018678574003E2791 /* Wine List */ = {
+		4FFA912018678574003E2791 /* Review List */ = {
 			isa = PBXGroup;
 			children = (
 				4FFA912C18678993003E2791 /* GRPReviewTableViewCell.h */,
 				4FFA912D18678993003E2791 /* GRPReviewTableViewCell.m */,
 			);
-			name = "Wine List";
+			name = "Review List";
 			sourceTree = "<group>";
 		};
 		4FFA91211867857E003E2791 /* Review Details */ = {
@@ -755,6 +781,10 @@
 				4FFA913A1867A5C3003E2791 /* GRPWineImageView.m */,
 				4FFA913C1867A867003E2791 /* GRPRatingView.h */,
 				4FFA913D1867A867003E2791 /* GRPRatingView.m */,
+				1DFC7A921A4DEAE800646F1A /* GRPTableView.h */,
+				1DFC7A931A4DEAE800646F1A /* GRPTableView.m */,
+				1DFC7A951A4DEB0600646F1A /* GRPTableViewCell.h */,
+				1DFC7A961A4DEB0600646F1A /* GRPTableViewCell.m */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -906,14 +936,17 @@
 				1D5FEFCC1A4DCB47002213A6 /* FZCDSURLOperation.m in Sources */,
 				1D5FEFCB1A4DCB47002213A6 /* FZCDSFetchRelationshipOperation.m in Sources */,
 				1D5FEF411A4DC8FD002213A6 /* GRPWine+GRP.m in Sources */,
+				1DFC7A971A4DEB0600646F1A /* GRPTableViewCell.m in Sources */,
 				1D5FEFFD1A4DCB6E002213A6 /* FZCollectionViewCellViewModel.m in Sources */,
 				1D5FEFF81A4DCB6E002213A6 /* FZViewModelBuilderGroupedByKeyPath.m in Sources */,
 				4FFA913418678F15003E2791 /* UIColor+GRP.m in Sources */,
 				1D5FEFCA1A4DCB47002213A6 /* FZCDSFetchOperation.m in Sources */,
 				1D5FEFA91A4DCB47002213A6 /* FZCDSActionAddHeader.m in Sources */,
+				1DFC7A901A4DE5CC00646F1A /* GRPAdjustableTextFieldTableViewCell.m in Sources */,
 				1D5FF0001A4DCB6E002213A6 /* FZViewModel.m in Sources */,
 				1D5FEFB51A4DCB47002213A6 /* NSObject+AssociatedObject.m in Sources */,
 				1D5FEFB81A4DCB47002213A6 /* UIViewController+FZCDS.m in Sources */,
+				1DFC7A8C1A4DE27A00646F1A /* NSDate+GRP.m in Sources */,
 				1D5FEFFB1A4DCB6E002213A6 /* FZViewModelBuilderNestedBuilders.m in Sources */,
 				1D5FEF2F1A4DC6A7002213A6 /* Grapes.xcdatamodeld in Sources */,
 				1D5FEF3B1A4DC8E2002213A6 /* GRPUser+GRP.m in Sources */,
@@ -945,6 +978,7 @@
 				1D5FEFB11A4DCB47002213A6 /* NSEntityDescription+Cache.m in Sources */,
 				1D5FEFC41A4DCB47002213A6 /* FZCDSTableViewController.m in Sources */,
 				1D5FEFFC1A4DCB6E002213A6 /* FZCellViewModel.m in Sources */,
+				1DFC7A941A4DEAE800646F1A /* GRPTableView.m in Sources */,
 				1D5FF00C1A4DD487002213A6 /* GRPWine.m in Sources */,
 				1D5FEFB71A4DCB47002213A6 /* UIResponder+FZCDS.m in Sources */,
 				1D5FEFB91A4DCB47002213A6 /* FZCDSCache.m in Sources */,

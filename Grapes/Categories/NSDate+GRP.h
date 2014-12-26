@@ -1,13 +1,15 @@
 //
-//  GRPReview+GRP.h
+//  NSDate+GRP.h
 //  Grapes
 //
 //  Created by Noah Blake on 12/26/14.
 //  Copyright (c) 2014 Woodcutting. All rights reserved.
 //
 
-#import "GRPReview.h"
+#import <Foundation/Foundation.h>
 
-@interface GRPReview (GRP)
-- (NSString *)dateString;
+@interface NSDate (GRP)
+
+- (NSString *)reviewListDisplayString;
+
 @end
