@@ -12,5 +12,6 @@
 @interface GRPDataSifter : NSObject
 
 + (NSArray *)allWines;
-
++ (NSArray *)allReviews;
++ (NSArray *)allUsers;
 @end

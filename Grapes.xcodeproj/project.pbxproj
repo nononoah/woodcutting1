@@ -71,6 +71,7 @@
 		1D5FF0001A4DCB6E002213A6 /* FZViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEFF31A4DCB6E002213A6 /* FZViewModel.m */; };
 		1D5FF0031A4DCBEA002213A6 /* FZCDSCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF0021A4DCBEA002213A6 /* FZCDSCollectionController.m */; };
 		1D5FF0061A4DCC93002213A6 /* NSError+FZCDS.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF0051A4DCC93002213A6 /* NSError+FZCDS.m */; };
+		1D5FF0091A4DCD55002213A6 /* GRPUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF0081A4DCD55002213A6 /* GRPUserHandler.m */; };
 		1DF5C4B919BCDC820064209C /* GRPWineDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4B819BCDC820064209C /* GRPWineDetailsViewController.m */; };
 		1DF5C4BC19BCDEE80064209C /* GRPViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4BB19BCDEE80064209C /* GRPViewControllerFactory.m */; };
 		36B9678AF9CE028350BF237E /* libPods-Grapes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8F471BE6B6D8045422EAA1 /* libPods-Grapes.a */; };
@@ -248,6 +249,8 @@
 		1D5FF0021A4DCBEA002213A6 /* FZCDSCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZCDSCollectionController.m; sourceTree = "<group>"; };
 		1D5FF0041A4DCC93002213A6 /* NSError+FZCDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+FZCDS.h"; sourceTree = "<group>"; };
 		1D5FF0051A4DCC93002213A6 /* NSError+FZCDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+FZCDS.m"; sourceTree = "<group>"; };
+		1D5FF0071A4DCD55002213A6 /* GRPUserHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPUserHandler.h; sourceTree = "<group>"; };
+		1D5FF0081A4DCD55002213A6 /* GRPUserHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPUserHandler.m; sourceTree = "<group>"; };
 		1DF5C4B719BCDC820064209C /* GRPWineDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWineDetailsViewController.h; sourceTree = "<group>"; };
 		1DF5C4B819BCDC820064209C /* GRPWineDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWineDetailsViewController.m; sourceTree = "<group>"; };
 		1DF5C4BA19BCDEE80064209C /* GRPViewControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPViewControllerFactory.h; sourceTree = "<group>"; };
@@ -703,6 +706,8 @@
 				1D5FEF281A4DC636002213A6 /* GRPDataGenerator.m */,
 				1D5FEF2A1A4DC65B002213A6 /* GRPDataSifter.h */,
 				1D5FEF2B1A4DC65B002213A6 /* GRPDataSifter.m */,
+				1D5FF0071A4DCD55002213A6 /* GRPUserHandler.h */,
+				1D5FF0081A4DCD55002213A6 /* GRPUserHandler.m */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -895,6 +900,7 @@
 				1D5FEFC91A4DCB47002213A6 /* FZCDSFetchObjectOperation.m in Sources */,
 				1D5FEFC31A4DCB47002213A6 /* FZCDSPagingTableViewController.m in Sources */,
 				4FFA913718678F2B003E2791 /* GRPAppearanceHandler.m in Sources */,
+				1D5FF0091A4DCD55002213A6 /* GRPUserHandler.m in Sources */,
 				1D5FEFF91A4DCB6E002213A6 /* FZViewModelBuilderGroupedByKeyPathEchoing.m in Sources */,
 				1D5FEFBF1A4DCB47002213A6 /* FZCDSFetchArrayController.m in Sources */,
 				4FFA912818678640003E2791 /* GRPWineListViewController.m in Sources */,
