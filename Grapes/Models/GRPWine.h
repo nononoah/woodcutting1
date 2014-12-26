@@ -13,9 +13,12 @@
 
 @interface GRPWine : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * type;
 @property (nonatomic, retain) NSString * imageURL;
+@property (nonatomic, retain) NSString * type;
 @property (nonatomic, retain) NSString * wineID;
+@property (nonatomic, retain) NSNumber * rating;
+@property (nonatomic, retain) NSString * countryOfOrigin;
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *reviews;
 @end
 

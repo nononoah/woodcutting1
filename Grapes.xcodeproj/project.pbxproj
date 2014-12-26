@@ -10,7 +10,6 @@
 		1D5FEF291A4DC636002213A6 /* GRPDataGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF281A4DC636002213A6 /* GRPDataGenerator.m */; };
 		1D5FEF2C1A4DC65B002213A6 /* GRPDataSifter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF2B1A4DC65B002213A6 /* GRPDataSifter.m */; };
 		1D5FEF2F1A4DC6A7002213A6 /* Grapes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF2D1A4DC6A7002213A6 /* Grapes.xcdatamodeld */; };
-		1D5FEF321A4DC8C9002213A6 /* GRPWine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF311A4DC8C9002213A6 /* GRPWine.m */; };
 		1D5FEF351A4DC8C9002213A6 /* GRPReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF341A4DC8C9002213A6 /* GRPReview.m */; };
 		1D5FEF381A4DC8C9002213A6 /* GRPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF371A4DC8C9002213A6 /* GRPUser.m */; };
 		1D5FEF3B1A4DC8E2002213A6 /* GRPUser+GRP.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF3A1A4DC8E2002213A6 /* GRPUser+GRP.m */; };
@@ -72,6 +71,7 @@
 		1D5FF0031A4DCBEA002213A6 /* FZCDSCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF0021A4DCBEA002213A6 /* FZCDSCollectionController.m */; };
 		1D5FF0061A4DCC93002213A6 /* NSError+FZCDS.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF0051A4DCC93002213A6 /* NSError+FZCDS.m */; };
 		1D5FF0091A4DCD55002213A6 /* GRPUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF0081A4DCD55002213A6 /* GRPUserHandler.m */; };
+		1D5FF00C1A4DD487002213A6 /* GRPWine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF00B1A4DD487002213A6 /* GRPWine.m */; };
 		1DF5C4B919BCDC820064209C /* GRPWineDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4B819BCDC820064209C /* GRPWineDetailsViewController.m */; };
 		1DF5C4BC19BCDEE80064209C /* GRPViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4BB19BCDEE80064209C /* GRPViewControllerFactory.m */; };
 		36B9678AF9CE028350BF237E /* libPods-Grapes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8F471BE6B6D8045422EAA1 /* libPods-Grapes.a */; };
@@ -112,8 +112,6 @@
 		1D5FEF2A1A4DC65B002213A6 /* GRPDataSifter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPDataSifter.h; sourceTree = "<group>"; };
 		1D5FEF2B1A4DC65B002213A6 /* GRPDataSifter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPDataSifter.m; sourceTree = "<group>"; };
 		1D5FEF2E1A4DC6A7002213A6 /* Grapes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Grapes.xcdatamodel; sourceTree = "<group>"; };
-		1D5FEF301A4DC8C9002213A6 /* GRPWine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWine.h; sourceTree = "<group>"; };
-		1D5FEF311A4DC8C9002213A6 /* GRPWine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWine.m; sourceTree = "<group>"; };
 		1D5FEF331A4DC8C9002213A6 /* GRPReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPReview.h; sourceTree = "<group>"; };
 		1D5FEF341A4DC8C9002213A6 /* GRPReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPReview.m; sourceTree = "<group>"; };
 		1D5FEF361A4DC8C9002213A6 /* GRPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPUser.h; sourceTree = "<group>"; };
@@ -251,6 +249,8 @@
 		1D5FF0051A4DCC93002213A6 /* NSError+FZCDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+FZCDS.m"; sourceTree = "<group>"; };
 		1D5FF0071A4DCD55002213A6 /* GRPUserHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPUserHandler.h; sourceTree = "<group>"; };
 		1D5FF0081A4DCD55002213A6 /* GRPUserHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPUserHandler.m; sourceTree = "<group>"; };
+		1D5FF00A1A4DD487002213A6 /* GRPWine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWine.h; sourceTree = "<group>"; };
+		1D5FF00B1A4DD487002213A6 /* GRPWine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWine.m; sourceTree = "<group>"; };
 		1DF5C4B719BCDC820064209C /* GRPWineDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWineDetailsViewController.h; sourceTree = "<group>"; };
 		1DF5C4B819BCDC820064209C /* GRPWineDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWineDetailsViewController.m; sourceTree = "<group>"; };
 		1DF5C4BA19BCDEE80064209C /* GRPViewControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPViewControllerFactory.h; sourceTree = "<group>"; };
@@ -321,8 +321,8 @@
 				1D5FEF371A4DC8C9002213A6 /* GRPUser.m */,
 				1D5FEF331A4DC8C9002213A6 /* GRPReview.h */,
 				1D5FEF341A4DC8C9002213A6 /* GRPReview.m */,
-				1D5FEF301A4DC8C9002213A6 /* GRPWine.h */,
-				1D5FEF311A4DC8C9002213A6 /* GRPWine.m */,
+				1D5FF00A1A4DD487002213A6 /* GRPWine.h */,
+				1D5FF00B1A4DD487002213A6 /* GRPWine.m */,
 			);
 			name = "Base Models";
 			sourceTree = "<group>";
@@ -892,7 +892,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D5FEF321A4DC8C9002213A6 /* GRPWine.m in Sources */,
 				1D5FEFF41A4DCB6E002213A6 /* FZViewModelBuilder.m in Sources */,
 				1D5FEFAA1A4DCB47002213A6 /* FZCDSActionCreateCookie.m in Sources */,
 				1D5FEFD41A4DCB5D002213A6 /* FZTableViewDelegate.m in Sources */,
@@ -946,6 +945,7 @@
 				1D5FEFB11A4DCB47002213A6 /* NSEntityDescription+Cache.m in Sources */,
 				1D5FEFC41A4DCB47002213A6 /* FZCDSTableViewController.m in Sources */,
 				1D5FEFFC1A4DCB6E002213A6 /* FZCellViewModel.m in Sources */,
+				1D5FF00C1A4DD487002213A6 /* GRPWine.m in Sources */,
 				1D5FEFB71A4DCB47002213A6 /* UIResponder+FZCDS.m in Sources */,
 				1D5FEFB91A4DCB47002213A6 /* FZCDSCache.m in Sources */,
 				1D5FEFB41A4DCB47002213A6 /* NSManagedObject+FZCDS.m in Sources */,

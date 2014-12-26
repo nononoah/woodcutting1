@@ -21,8 +21,11 @@
         </userInfo>
     </entity>
     <entity name="Wine" representedClassName="GRPWine" syncable="YES">
+        <attribute name="countryOfOrigin" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wineID" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="wine" inverseEntity="Review" syncable="YES"/>
         <userInfo>
@@ -30,8 +33,8 @@
         </userInfo>
     </entity>
     <elements>
-        <element name="Wine" positionX="-63" positionY="-18" width="128" height="103"/>
         <element name="Review" positionX="-54" positionY="-9" width="128" height="148"/>
         <element name="User" positionX="-36" positionY="0" width="128" height="88"/>
+        <element name="Wine" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

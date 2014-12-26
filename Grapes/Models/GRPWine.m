@@ -12,9 +12,12 @@
 
 @implementation GRPWine
 
-@dynamic type;
 @dynamic imageURL;
+@dynamic type;
 @dynamic wineID;
+@dynamic rating;
+@dynamic countryOfOrigin;
+@dynamic name;
 @dynamic reviews;
 
 @end

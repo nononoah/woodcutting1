@@ -8,10 +8,16 @@
 
 #import "GRPAppDelegate.h"
 
+#import "FZCDSManager.h"
+#import "GRPDataGenerator.h"
+
 @implementation GRPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	[FZCDSManager sharedManager].modelName = @"Grapes";
+	[GRPDataGenerator generateDefaultData];
+	
     return YES;
 }
 							
