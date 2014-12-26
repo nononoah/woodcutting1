@@ -6,31 +6,34 @@
 //  Copyright (c) 2013 Woodcutting. All rights reserved.
 //
 
-#import "GRPWineListViewController.h"
+#import "GRPReviewListViewController.h"
 
 #import "GRPViewControllerFactory.h"
 #import "GRPUserHandler.h"
 #import "FZCDSTableViewController.h"
 
-#import "GRPWineListTableViewCell.h"
+#import "GRPReviewTableViewCell.h"
 
 #import "GRPUser+GRP.h"
 #import "GRPReview+GRP.h"
 #import "GRPWine+GRP.h"
 
-static NSString *const GRPWineListTableViewCellIdentifier = @"GRPWineListTableViewCell";
+static NSString *const GRPReviewTableViewCellIdentifier = @"GRPReviewTableViewCell";
 
-@interface GRPWineListViewController ()
+@interface GRPReviewListViewController ()
 @property (strong, nonatomic) IBOutlet FZCDSTableViewController *tableViewController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
-@implementation GRPWineListViewController
+@implementation GRPReviewListViewController
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
 	self.title = @"Your Grapes";
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addReview)];
+	
+	self.tableView.tableFooterView = [UIView new];
+	self.tableView.layoutMargins = UIEdgeInsetsZero;
 	
 	[self configureTableViewController];
 }
@@ -45,16 +48,21 @@ static NSString *const GRPWineListTableViewCellIdentifier = @"GRPWineListTableVi
 
 - (FZViewModelBuilder *)reviewListViewModelBuilder
 {
-	__weak GRPWineListViewController *tmpSelf = self;
+	__weak GRPReviewListViewController *tmpSelf = self;
 	
 	FZViewModelBuilder *rtnAdapter = [[FZViewModelBuilder alloc] init];
-	rtnAdapter.cellIdentifier = GRPWineListTableViewCellIdentifier;
+	rtnAdapter.cellIdentifier = GRPReviewTableViewCellIdentifier;
 	rtnAdapter.cellConfigureBlock =
 	^(UITableView *inTableView, UITableViewCell *inTableViewCell, NSIndexPath *inIndexPath, id inUserData)
 	{
-		GRPWineListTableViewCell *tmpCell = (GRPWineListTableViewCell *)inTableViewCell;
+		GRPReviewTableViewCell *tmpCell = (GRPReviewTableViewCell *)inTableViewCell;
 		GRPReview *tmpReview = inUserData;
-		
+		if ([tmpReview isKindOfClass:[GRPReview class]])
+		{
+			[tmpCell.ratingView setRating:tmpReview.rating.integerValue];
+			tmpCell.titleLabel.text = tmpReview.wine.name;
+			[tmpCell.wineImageView setImage:nil];
+		}
 	};
 	rtnAdapter.cellDidSelectBlock =
 	^(UITableView *inTableView, NSIndexPath *inIndexPath, id inUserData)
@@ -69,13 +77,13 @@ static NSString *const GRPWineListTableViewCellIdentifier = @"GRPWineListTableVi
 #pragma mark - Navigation actions
 - (void)pushToReviewDetailsForReview:(GRPReview *)inReview
 {
-	[self.navigationController pushViewController:[GRPViewControllerFactory wineDetailsViewControllerForWine:inReview] animated:YES];
+	[self.navigationController pushViewController:[GRPViewControllerFactory reviewDetailsViewControllerForReview:inReview] animated:YES];
 }
 
 - (void)addReview
 {
 	// TODO: Set wine, perform dynamic animation.
-	UIViewController *tmpViewController = [GRPViewControllerFactory wineDetailsViewControllerForWine:nil];
+	UIViewController *tmpViewController = [GRPViewControllerFactory reviewDetailsViewControllerForReview:nil];
 	UINavigationController *tmpNavigationController = [[UINavigationController alloc] initWithRootViewController:tmpViewController];
 	[self presentViewController:tmpNavigationController animated:YES completion:nil];
 }

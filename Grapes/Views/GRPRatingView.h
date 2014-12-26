@@ -10,4 +10,6 @@
 
 @interface GRPRatingView : UIView
 
+- (void)setRating:(NSInteger)inRating;
+
 @end

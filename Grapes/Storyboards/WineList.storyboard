@@ -39,7 +39,7 @@
         <!--Wine List-->
         <scene sceneID="LE0-CI-NN2">
             <objects>
-                <viewController storyboardIdentifier="GRPWineListViewController" title="Wine List" id="G8W-27-NQF" customClass="GRPWineListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GRPWineListViewController" title="Wine List" id="G8W-27-NQF" customClass="GRPReviewListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mQ3-Gw-A18"/>
                         <viewControllerLayoutGuide type="bottom" id="5DA-Yv-J4A"/>
@@ -48,18 +48,18 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jbx-rL-Ihd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="91" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jbx-rL-Ihd">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GRPWineListTableViewCell" rowHeight="100" id="V5o-NC-WQB" customClass="GRPWineListTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GRPReviewTableViewCell" rowHeight="101" id="V5o-NC-WQB" customClass="GRPReviewTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V5o-NC-WQB" id="rXl-Jr-8NF">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50A-4b-oOR" userLabel="wineImageView">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50A-4b-oOR" userLabel="wineImageView" customClass="GRPWineImageView">
                                                     <rect key="frame" x="10" y="10" width="80" height="80"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -67,24 +67,27 @@
                                                         <constraint firstAttribute="width" constant="80" id="agO-he-4BC"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6a-s2-LjF" userLabel="titleLabel">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6a-s2-LjF" userLabel="titleLabel">
                                                     <rect key="frame" x="100" y="10" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibA-qF-czU" userLabel="ratingView" customClass="GRPRatingView">
-                                                    <rect key="frame" x="100" y="41" width="210" height="17"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="100" y="41" width="210" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="5IS-JD-Pcf"/>
+                                                    </constraints>
                                                 </view>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3x7-W8-Xo2" userLabel="dateLabel">
-                                                    <rect key="frame" x="268" y="68" width="42" height="21"/>
+                                                    <rect key="frame" x="268" y="71" width="42" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="j6a-s2-LjF" secondAttribute="trailing" constant="10" id="4vB-4g-an9"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="50A-4b-oOR" secondAttribute="bottom" constant="10" id="5oe-kO-VWh"/>
                                                 <constraint firstAttribute="trailing" secondItem="3x7-W8-Xo2" secondAttribute="trailing" constant="10" id="AbG-jb-Hn6"/>
                                                 <constraint firstItem="3x7-W8-Xo2" firstAttribute="top" secondItem="ibA-qF-czU" secondAttribute="bottom" constant="10" id="Apw-aH-Gzn"/>
                                                 <constraint firstItem="j6a-s2-LjF" firstAttribute="leading" secondItem="50A-4b-oOR" secondAttribute="trailing" constant="10" id="MdM-Yc-yig"/>
@@ -131,10 +134,11 @@
                 <customObject id="8ma-uU-6ux" customClass="FZCDSTableViewController">
                     <connections>
                         <outlet property="delegate" destination="G8W-27-NQF" id="gRx-IS-eKe"/>
+                        <outlet property="tableView" destination="Jbx-rL-Ihd" id="1OR-9n-ygP"/>
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="845" y="-293"/>
+            <point key="canvasLocation" x="845" y="-294"/>
         </scene>
         <!--Item-->
         <scene sceneID="i3W-nN-8nZ">

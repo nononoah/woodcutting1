@@ -14,7 +14,7 @@
 
 @implementation GRPViewControllerFactory
 
-+ (UIViewController *)wineDetailsViewControllerForWine:(GRPReview *)inReview
++ (UIViewController *)reviewDetailsViewControllerForReview:(GRPReview *)inReview
 {
 	GRPReviewDetailsViewController *rtnViewController = [[UIStoryboard storyboardWithName:@"WineList" bundle:nil] instantiateViewControllerWithIdentifier:@"GRPReviewDetailsViewController"];
 	rtnViewController.review = inReview;

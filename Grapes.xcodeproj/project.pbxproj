@@ -88,8 +88,8 @@
 		4FFA9109186782D4003E2791 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FFA9107186782D4003E2791 /* InfoPlist.strings */; };
 		4FFA910B186782D4003E2791 /* GrapesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA910A186782D4003E2791 /* GrapesTests.m */; };
 		4FFA911E18678552003E2791 /* WineList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FFA911D18678552003E2791 /* WineList.storyboard */; };
-		4FFA912818678640003E2791 /* GRPWineListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA912718678640003E2791 /* GRPWineListViewController.m */; };
-		4FFA912E18678993003E2791 /* GRPWineListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA912D18678993003E2791 /* GRPWineListTableViewCell.m */; };
+		4FFA912818678640003E2791 /* GRPReviewListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA912718678640003E2791 /* GRPReviewListViewController.m */; };
+		4FFA912E18678993003E2791 /* GRPReviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA912D18678993003E2791 /* GRPReviewTableViewCell.m */; };
 		4FFA913418678F15003E2791 /* UIColor+GRP.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA913318678F15003E2791 /* UIColor+GRP.m */; };
 		4FFA913718678F2B003E2791 /* GRPAppearanceHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA913618678F2B003E2791 /* GRPAppearanceHandler.m */; };
 		4FFA913B1867A5C3003E2791 /* GRPWineImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA913A1867A5C3003E2791 /* GRPWineImageView.m */; };
@@ -272,10 +272,10 @@
 		4FFA9108186782D4003E2791 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4FFA910A186782D4003E2791 /* GrapesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrapesTests.m; sourceTree = "<group>"; };
 		4FFA911D18678552003E2791 /* WineList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WineList.storyboard; sourceTree = "<group>"; };
-		4FFA912618678640003E2791 /* GRPWineListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWineListViewController.h; sourceTree = "<group>"; };
-		4FFA912718678640003E2791 /* GRPWineListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWineListViewController.m; sourceTree = "<group>"; };
-		4FFA912C18678993003E2791 /* GRPWineListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWineListTableViewCell.h; sourceTree = "<group>"; };
-		4FFA912D18678993003E2791 /* GRPWineListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWineListTableViewCell.m; sourceTree = "<group>"; };
+		4FFA912618678640003E2791 /* GRPReviewListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPReviewListViewController.h; sourceTree = "<group>"; };
+		4FFA912718678640003E2791 /* GRPReviewListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPReviewListViewController.m; sourceTree = "<group>"; };
+		4FFA912C18678993003E2791 /* GRPReviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPReviewTableViewCell.h; sourceTree = "<group>"; };
+		4FFA912D18678993003E2791 /* GRPReviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPReviewTableViewCell.m; sourceTree = "<group>"; };
 		4FFA913218678F15003E2791 /* UIColor+GRP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GRP.h"; sourceTree = "<group>"; };
 		4FFA913318678F15003E2791 /* UIColor+GRP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GRP.m"; sourceTree = "<group>"; };
 		4FFA913518678F2B003E2791 /* GRPAppearanceHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPAppearanceHandler.h; sourceTree = "<group>"; };
@@ -659,8 +659,8 @@
 		4FFA9115186784B5003E2791 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4FFA911F18678562003E2791 /* Wine List */,
-				4FFA91211867857E003E2791 /* Wine Details */,
+				4FFA911F18678562003E2791 /* Review List */,
+				4FFA91211867857E003E2791 /* Review Details */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -721,31 +721,31 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		4FFA911F18678562003E2791 /* Wine List */ = {
+		4FFA911F18678562003E2791 /* Review List */ = {
 			isa = PBXGroup;
 			children = (
-				4FFA912618678640003E2791 /* GRPWineListViewController.h */,
-				4FFA912718678640003E2791 /* GRPWineListViewController.m */,
+				4FFA912618678640003E2791 /* GRPReviewListViewController.h */,
+				4FFA912718678640003E2791 /* GRPReviewListViewController.m */,
 			);
-			name = "Wine List";
+			name = "Review List";
 			sourceTree = "<group>";
 		};
 		4FFA912018678574003E2791 /* Wine List */ = {
 			isa = PBXGroup;
 			children = (
-				4FFA912C18678993003E2791 /* GRPWineListTableViewCell.h */,
-				4FFA912D18678993003E2791 /* GRPWineListTableViewCell.m */,
+				4FFA912C18678993003E2791 /* GRPReviewTableViewCell.h */,
+				4FFA912D18678993003E2791 /* GRPReviewTableViewCell.m */,
 			);
 			name = "Wine List";
 			sourceTree = "<group>";
 		};
-		4FFA91211867857E003E2791 /* Wine Details */ = {
+		4FFA91211867857E003E2791 /* Review Details */ = {
 			isa = PBXGroup;
 			children = (
 				1DF5C4B719BCDC820064209C /* GRPReviewDetailsViewController.h */,
 				1DF5C4B819BCDC820064209C /* GRPReviewDetailsViewController.m */,
 			);
-			name = "Wine Details";
+			name = "Review Details";
 			sourceTree = "<group>";
 		};
 		4FFA91381867A5AE003E2791 /* Global */ = {
@@ -902,7 +902,7 @@
 				1D5FF0091A4DCD55002213A6 /* GRPUserHandler.m in Sources */,
 				1D5FEFF91A4DCB6E002213A6 /* FZViewModelBuilderGroupedByKeyPathEchoing.m in Sources */,
 				1D5FEFBF1A4DCB47002213A6 /* FZCDSFetchArrayController.m in Sources */,
-				4FFA912818678640003E2791 /* GRPWineListViewController.m in Sources */,
+				4FFA912818678640003E2791 /* GRPReviewListViewController.m in Sources */,
 				1D5FEFCC1A4DCB47002213A6 /* FZCDSURLOperation.m in Sources */,
 				1D5FEFCB1A4DCB47002213A6 /* FZCDSFetchRelationshipOperation.m in Sources */,
 				1D5FEF411A4DC8FD002213A6 /* GRPWine+GRP.m in Sources */,
@@ -919,7 +919,7 @@
 				1D5FEF3B1A4DC8E2002213A6 /* GRPUser+GRP.m in Sources */,
 				1D5FEFD31A4DCB5D002213A6 /* FZTableViewDelegate+Private.m in Sources */,
 				4FFA90F0186782D4003E2791 /* GRPAppDelegate.m in Sources */,
-				4FFA912E18678993003E2791 /* GRPWineListTableViewCell.m in Sources */,
+				4FFA912E18678993003E2791 /* GRPReviewTableViewCell.m in Sources */,
 				4FFA90EC186782D4003E2791 /* main.m in Sources */,
 				1D5FEFFF1A4DCB6E002213A6 /* FZTableViewSectionModel.m in Sources */,
 				1D5FEF3E1A4DC8ED002213A6 /* GRPReview+GRP.m in Sources */,

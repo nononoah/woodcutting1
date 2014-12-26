@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GRPWineListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface GRPReviewListViewController : UIViewController
 
 @end

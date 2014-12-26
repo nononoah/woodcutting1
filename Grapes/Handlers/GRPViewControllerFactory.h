@@ -11,5 +11,5 @@
 @class GRPReview;
 
 @interface GRPViewControllerFactory : NSObject
-+ (UIViewController *)wineDetailsViewControllerForWine:(GRPReview *)inReview;
++ (UIViewController *)reviewDetailsViewControllerForReview:(GRPReview *)inReview;
 @end

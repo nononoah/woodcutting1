@@ -17,6 +17,9 @@
 	[super awakeFromNib];
 	
 	self.imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+	self.imageView.layer.cornerRadius = CGRectGetWidth(self.imageView.frame) / 2.0f;
+	
+	self.imageView.backgroundColor = [UIColor purpleColor];
 	[self addSubview:self.imageView];
 }
 

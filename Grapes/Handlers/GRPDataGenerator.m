@@ -35,12 +35,12 @@
 	tmpWine.name = @"Clean Slate";
 	
 	tmpWine = (GRPWine *)[[FZCDSManager sharedManager] uniqueObjectForEntity:@"Wine" identifier:@"2"];
-	tmpWine.type = @"Molly Dooker";
-	tmpWine.name = @"Merlot";
+	tmpWine.type = @"Merlot";
+	tmpWine.name = @"Molly Dooker";
 	
 	tmpWine = (GRPWine *)[[FZCDSManager sharedManager] uniqueObjectForEntity:@"Wine" identifier:@"3"];
-	tmpWine.type = @"Marietta Lot 49";
-	tmpWine.name = @"Syrah";
+	tmpWine.type = @"Syrah";
+	tmpWine.name = @"Marietta Lot 49";
 	
 	[[FZCDSManager sharedManager] save];
 }
