@@ -8,14 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+#import "GRPEditableTableViewCell.h"
+#import "GRPKeyboardAttachementView.h"
+
 @protocol GRPKeyboardMediatable <NSObject>
 - (UITableView *)tableView;
 - (NSArray *)editableIndexPathArray;
 @end
 
-@interface GRPKeyboardMediator : NSObject
+@interface GRPKeyboardMediator : NSObject <GRPKeyboardAttachmentResponder>
 
 + (instancetype)keyboardMediatorForViewController:(UIViewController <GRPKeyboardMediatable>*)inViewController;
+- (void)setCurrentlyEditingTableViewCell:(UITableViewCell <GRPEditableTableViewCell>*)inTableViewCell;
 - (void)pauseKeyboardObservation;
 - (void)resumeKeyboardObservation;
 

@@ -21,10 +21,11 @@
 
 static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdjustableTextFieldTableViewCell";
 
+
 @interface GRPReviewDetailsViewController ()
 @property (nonatomic, assign) BOOL isCreatingReview;
 @property (nonatomic, assign) BOOL isEditingReview;
-@property (strong, nonatomic) IBOutlet GRPTableView *tableView;
+@property (weak, nonatomic) IBOutlet GRPTableView *tableView;
 @property (strong, nonatomic) IBOutlet FZTableViewDelegate *tableViewDelegate;
 @property (nonatomic, strong) GRPKeyboardMediator *keyboardMediator;
 @property (nonatomic, strong) NSArray *editableIndexPathArray;
@@ -56,6 +57,7 @@ static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdju
 - (void)viewDidAppear:(BOOL)animated
 {
 	[super viewDidAppear:animated];
+	[self.keyboardMediator resumeKeyboardObservation];
 	
 }
 - (void)viewDidDisappear:(BOOL)animated
@@ -64,12 +66,13 @@ static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdju
 	{
 		[self scrubStagingReview];
 	}
+	[self.keyboardMediator pauseKeyboardObservation];
 }
 
 #pragma mark - Keyboard preparation -
 - (void)prepareKeyboard
 {
-	
+	self.keyboardMediator = [GRPKeyboardMediator keyboardMediatorForViewController:self];
 }
 
 #pragma mark - TableView configuration -
@@ -80,28 +83,47 @@ static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdju
 	NSMutableArray *tmpEditableIndexPathArray = [NSMutableArray new];
 	
 	// Wine name
-	FZTableViewCellViewModel *tmpCellModel = [FZTableViewCellViewModel tableViewCellViewModelWithReuseIdentifier:GRPAdjustableTextFieldTableViewCellIdentifier
-																										  height:55.0f
-																								  configureBlock:
-	^(id inAssemblyView, id inCell, NSIndexPath *inIndexPath, id inUserData)
-	{
-		GRPAdjustableTextFieldTableViewCell *tmpCell = (GRPAdjustableTextFieldTableViewCell *)inCell;
-		tmpCell.adjustableTextField.text = tmpSelf.review.wine.name.length ? tmpSelf.review.wine.name : nil;
-		tmpCell.adjustableTextField.placeholder = @"Enter the wine's name.";
-		tmpCell.textFieldDidChangeBlock = ^(NSString *inTextFieldText){[tmpSelf setWineName:inTextFieldText];};
-	}
-																								  didSelectBlock:
-	^(id inAssemblyView, NSIndexPath *inIndexPath, id inUserData)
-	{
-		[inAssemblyView deselectRowAtIndexPath:inIndexPath animated:NO];
-		GRPAdjustableTextFieldTableViewCell *tmpCell = (GRPAdjustableTextFieldTableViewCell *)[inAssemblyView cellForItemAtIndexPath:inIndexPath];
-		[tmpCell.adjustableTextField becomeFirstResponder];
-	}];
+	FZTableViewCellViewModel *tmpCellModel = [self adjustableTextFieldModelWithText:tmpSelf.review.wine.name placeholder:@"Enter the wine's name" textFieldDidChangeBlock:^(NSString *inTextFieldText){[tmpSelf setReviewValue:inTextFieldText forKeyPath:@"wine.name"];}];
+	[tmpCellModelArray addObject:tmpCellModel];
+	[tmpEditableIndexPathArray addObject:[NSIndexPath indexPathForRow:(tmpCellModelArray.count - 1) inSection:0]];
+	
+	// Wine origin
+	tmpCellModel = [self adjustableTextFieldModelWithText:tmpSelf.review.wine.countryOfOrigin placeholder:@"Enter the wine's origin" textFieldDidChangeBlock: ^(NSString *inTextFieldText){[tmpSelf setReviewValue:inTextFieldText forKeyPath:@"wine.countryOfOrigin"];}];
+	[tmpCellModelArray addObject:tmpCellModel];
+	[tmpEditableIndexPathArray addObject:[NSIndexPath indexPathForRow:(tmpCellModelArray.count - 1) inSection:0]];
+	
+	// Wine type
+	tmpCellModel = [self adjustableTextFieldModelWithText:tmpSelf.review.wine.type placeholder:@"Enter the wine's type" textFieldDidChangeBlock: ^(NSString *inTextFieldText){[tmpSelf setReviewValue:inTextFieldText forKeyPath:@"wine.type"];}];
 	[tmpCellModelArray addObject:tmpCellModel];
 	[tmpEditableIndexPathArray addObject:[NSIndexPath indexPathForRow:(tmpCellModelArray.count - 1) inSection:0]];
 	
 	[self.tableViewDelegate setSectionModelArray:@[[FZTableViewSectionModel sectionModelWithRowModels:tmpCellModelArray]]];
 	self.editableIndexPathArray = [NSArray arrayWithArray:tmpEditableIndexPathArray];
+}
+
+- (FZTableViewCellViewModel *)adjustableTextFieldModelWithText:(NSString *)inText placeholder:(NSString *)inPlaceholder textFieldDidChangeBlock:(void (^)(NSString *))inTextFieldDidChangeBlock
+{
+	__weak GRPReviewDetailsViewController *tmpSelf = self;
+	FZTableViewCellViewModel *rtnCellModel = [FZTableViewCellViewModel tableViewCellViewModelWithReuseIdentifier:GRPAdjustableTextFieldTableViewCellIdentifier
+																										  height:55.0f
+																								  configureBlock:
+											  ^(id inAssemblyView, id inCell, NSIndexPath *inIndexPath, id inUserData)
+											  {
+												  GRPAdjustableTextFieldTableViewCell *tmpCell = (GRPAdjustableTextFieldTableViewCell *)inCell;
+												  tmpCell.adjustableTextField.text = inText.length ? inText : nil;
+												  tmpCell.adjustableTextField.placeholder = inPlaceholder;
+												  tmpCell.textFieldDidChangeBlock = inTextFieldDidChangeBlock;
+												  __weak GRPAdjustableTextFieldTableViewCell *blkCell = tmpCell;
+												  tmpCell.textFieldDidBeginEditingBlock = ^{[tmpSelf.keyboardMediator setCurrentlyEditingTableViewCell:blkCell];};
+											  }
+																								  didSelectBlock:
+											  ^(id inAssemblyView, NSIndexPath *inIndexPath, id inUserData)
+											  {
+												  [inAssemblyView deselectRowAtIndexPath:inIndexPath animated:NO];
+												  GRPAdjustableTextFieldTableViewCell *tmpCell = (GRPAdjustableTextFieldTableViewCell *)[inAssemblyView cellForRowAtIndexPath:inIndexPath];
+												  [tmpCell.adjustableTextField becomeFirstResponder];
+											  }];
+	return rtnCellModel;
 }
 
 #pragma mark - Staging data creation and conversion -
@@ -149,9 +171,9 @@ static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdju
 	self.isEditingReview = YES;
 }
 
-- (void)setWineName:(NSString *)inWineName
+- (void)setReviewValue:(NSString *)inValue forKeyPath:(NSString *)inKeyPath
 {
-	self.review.wine.name = inWineName;
+	[self.review setValue:inValue forKeyPath:inKeyPath];
 	[[FZCDSManager sharedManager] save];
 	[self validateForm];
 }

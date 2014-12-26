@@ -10,4 +10,5 @@
 
 @protocol GRPEditableTableViewCell <NSObject>
 - (void)editingEnabled:(BOOL)inEditingEnabled;
+- (void)beginEditing;
 @end

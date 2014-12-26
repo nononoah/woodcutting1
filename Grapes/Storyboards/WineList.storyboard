@@ -32,6 +32,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                     <connections>
+                                                        <action selector="textFieldDidBeginEditing:" destination="lrg-LZ-gxu" eventType="editingDidBegin" id="mvg-7K-U6A"/>
                                                         <action selector="textFieldDidChange:" destination="lrg-LZ-gxu" eventType="editingChanged" id="aZb-Ud-zPI"/>
                                                         <action selector="textFieldDidEndEditing:" destination="lrg-LZ-gxu" eventType="editingDidEnd" id="qEM-Bi-ydS"/>
                                                         <outlet property="delegate" destination="lrg-LZ-gxu" id="Bpe-ge-BJe"/>
@@ -67,7 +68,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="zRG-Mp-kI1"/>
                     <connections>
-                        <outlet property="tableView" destination="3Tu-Wc-MbF" id="W2M-rT-MbU"/>
+                        <outlet property="tableView" destination="kP0-7V-2cM" id="fCO-Ph-b06"/>
                         <outlet property="tableViewDelegate" destination="hsp-Ri-VbQ" id="4Gv-SG-e1B"/>
                     </connections>
                 </viewController>

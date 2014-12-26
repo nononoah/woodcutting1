@@ -80,6 +80,7 @@
 		1DFC7A971A4DEB0600646F1A /* GRPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7A961A4DEB0600646F1A /* GRPTableViewCell.m */; };
 		1DFC7A9B1A4DEF2000646F1A /* FZKeyboardAppearanceEventResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7A9A1A4DEF2000646F1A /* FZKeyboardAppearanceEventResponder.m */; };
 		1DFC7A9E1A4DEF4900646F1A /* GRPKeyboardMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7A9D1A4DEF4900646F1A /* GRPKeyboardMediator.m */; };
+		1DFC7AA11A4DF6B900646F1A /* GRPKeyboardAttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7AA01A4DF6B900646F1A /* GRPKeyboardAttachmentView.m */; };
 		36B9678AF9CE028350BF237E /* libPods-Grapes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8F471BE6B6D8045422EAA1 /* libPods-Grapes.a */; };
 		4FFA90E0186782D4003E2791 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFA90DF186782D4003E2791 /* Foundation.framework */; };
 		4FFA90E2186782D4003E2791 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFA90E1186782D4003E2791 /* CoreGraphics.framework */; };
@@ -274,6 +275,8 @@
 		1DFC7A9A1A4DEF2000646F1A /* FZKeyboardAppearanceEventResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZKeyboardAppearanceEventResponder.m; sourceTree = "<group>"; };
 		1DFC7A9C1A4DEF4900646F1A /* GRPKeyboardMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPKeyboardMediator.h; sourceTree = "<group>"; };
 		1DFC7A9D1A4DEF4900646F1A /* GRPKeyboardMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPKeyboardMediator.m; sourceTree = "<group>"; };
+		1DFC7A9F1A4DF6B900646F1A /* GRPKeyboardAttachementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPKeyboardAttachementView.h; sourceTree = "<group>"; };
+		1DFC7AA01A4DF6B900646F1A /* GRPKeyboardAttachmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPKeyboardAttachmentView.m; sourceTree = "<group>"; };
 		4FFA90DC186782D4003E2791 /* Grapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFA90DF186782D4003E2791 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FFA90E1186782D4003E2791 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -804,6 +807,8 @@
 				1DFC7A931A4DEAE800646F1A /* GRPTableView.m */,
 				1DFC7A951A4DEB0600646F1A /* GRPTableViewCell.h */,
 				1DFC7A961A4DEB0600646F1A /* GRPTableViewCell.m */,
+				1DFC7A9F1A4DF6B900646F1A /* GRPKeyboardAttachementView.h */,
+				1DFC7AA01A4DF6B900646F1A /* GRPKeyboardAttachmentView.m */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -1003,6 +1008,7 @@
 				1D5FEFB71A4DCB47002213A6 /* UIResponder+FZCDS.m in Sources */,
 				1D5FEFB91A4DCB47002213A6 /* FZCDSCache.m in Sources */,
 				1D5FEFB41A4DCB47002213A6 /* NSManagedObject+FZCDS.m in Sources */,
+				1DFC7AA11A4DF6B900646F1A /* GRPKeyboardAttachmentView.m in Sources */,
 				1D5FEFC21A4DCB47002213A6 /* FZCDSListener.m in Sources */,
 				1D5FEFC81A4DCB47002213A6 /* FZCDSLogOperation.m in Sources */,
 				1D5FEFAB1A4DCB47002213A6 /* FZCDSActionRemoveAllCookies.m in Sources */,

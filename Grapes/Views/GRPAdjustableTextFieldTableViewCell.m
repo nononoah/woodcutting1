@@ -14,6 +14,19 @@
 {
 	self.adjustableTextField.enabled = inEditingEnabled;
 }
+
+- (void)beginEditing
+{
+	self.adjustableTextField.enabled = YES;
+	[self.adjustableTextField becomeFirstResponder];
+}
+
+#pragma mark - Textfield delegation -
+- (IBAction)textFieldDidBeginEditing:(id)sender
+{
+	[self.textFieldDidBeginEditingBlock invoke];
+}
+
 - (IBAction)textFieldDidChange:(id)sender
 {
 	if (self.textFieldDidChangeBlock)
@@ -34,4 +47,5 @@
 	[self.adjustableTextField resignFirstResponder];
 	return NO;
 }
+
 @end

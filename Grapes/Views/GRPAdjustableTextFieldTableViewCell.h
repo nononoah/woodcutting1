@@ -12,5 +12,6 @@
 
 @interface GRPAdjustableTextFieldTableViewCell : GRPTableViewCell <GRPEditableTableViewCell, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *adjustableTextField;
+@property (nonatomic, copy) void (^textFieldDidBeginEditingBlock)();
 @property (nonatomic, copy) void (^textFieldDidChangeBlock)(NSString *inTextFieldText);
 @end
