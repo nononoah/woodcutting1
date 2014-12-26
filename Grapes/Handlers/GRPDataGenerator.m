@@ -10,6 +10,7 @@
 
 #import "FZCDSManager.h"
 #import "GRPDataSifter.h"
+#import "GRPUserHandler.h"
 
 #import "GRPWine+GRP.h"
 #import "GRPUser+GRP.h"
@@ -52,6 +53,7 @@
 	tmpReview.lastModified = [NSDate date];;
 	tmpReview.rating = @10;
 	tmpReview.wine = (GRPWine *)[[FZCDSManager sharedManager] uniqueObjectForEntity:@"Wine" identifier:@"1"];
+	tmpReview.user = [GRPUserHandler currentUser];
 	
 	tmpReview = (GRPReview *)[[FZCDSManager sharedManager] uniqueObjectForEntity:@"Review" identifier:@"2"];
 	tmpReview.text = @"One of Noah's favorites. Flavorful and dense.";
@@ -59,6 +61,7 @@
 	tmpReview.lastModified = [NSDate date];;
 	tmpReview.rating = @9;
 	tmpReview.wine = (GRPWine *)[[FZCDSManager sharedManager] uniqueObjectForEntity:@"Wine" identifier:@"2"];
+	tmpReview.user = [GRPUserHandler currentUser];
 	
 	tmpReview = (GRPReview *)[[FZCDSManager sharedManager] uniqueObjectForEntity:@"Review" identifier:@"3"];
 	tmpReview.text = @"Nothing makes me remember Mom and Dad quite like Marietta.";
@@ -66,6 +69,7 @@
 	tmpReview.lastModified = [NSDate date];;
 	tmpReview.rating = @8;
 	tmpReview.wine = (GRPWine *)[[FZCDSManager sharedManager] uniqueObjectForEntity:@"Wine" identifier:@"3"];
+	tmpReview.user = [GRPUserHandler currentUser];
 	
 	[[FZCDSManager sharedManager] save];
 }

@@ -8,14 +8,16 @@
 
 #import "GRPViewControllerFactory.h"
 
-#import "GRPWineDetailsViewController.h"
+#import "GRPReviewDetailsViewController.h"
+
+#import "GRPReview+GRP.h"
 
 @implementation GRPViewControllerFactory
 
-+ (UIViewController *)wineDetailsViewControllerForWine:(GRPWine *)inWine
++ (UIViewController *)wineDetailsViewControllerForWine:(GRPReview *)inReview
 {
-	GRPWineDetailsViewController *rtnViewController = [[UIStoryboard storyboardWithName:@"WineList" bundle:nil] instantiateViewControllerWithIdentifier:@"GRPWineDetailsViewController"];
-	rtnViewController.wine = inWine;
+	GRPReviewDetailsViewController *rtnViewController = [[UIStoryboard storyboardWithName:@"WineList" bundle:nil] instantiateViewControllerWithIdentifier:@"GRPReviewDetailsViewController"];
+	rtnViewController.review = inReview;
 	return rtnViewController;
 }
 

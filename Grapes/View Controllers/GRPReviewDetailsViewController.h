@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class GRPWine;
-@interface GRPWineDetailsViewController : UIViewController
+@class GRPReview;
+@interface GRPReviewDetailsViewController : UIViewController
 
-@property (nonatomic, strong) GRPWine *wine;
+@property (nonatomic, strong) GRPReview *review;
 
 @end

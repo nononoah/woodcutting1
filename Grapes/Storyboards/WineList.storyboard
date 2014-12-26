@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iER-ta-wlK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iER-ta-wlK">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Wine Details View Controller-->
+        <!--Review Details View Controller-->
         <scene sceneID="K82-FN-IPU">
             <objects>
-                <viewController storyboardIdentifier="GRPWineDetailsViewController" id="TvD-cv-DRf" customClass="GRPWineDetailsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GRPReviewDetailsViewController" id="TvD-cv-DRf" customClass="GRPReviewDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Whd-3D-JMj"/>
                         <viewControllerLayoutGuide type="bottom" id="3q6-mF-2fG"/>
@@ -16,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kP0-7V-2cM">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kP0-7V-2cM">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -36,7 +36,7 @@
             </objects>
             <point key="canvasLocation" x="845" y="-1011"/>
         </scene>
-        <!--Wine List View Controller - Wine List-->
+        <!--Wine List-->
         <scene sceneID="LE0-CI-NN2">
             <objects>
                 <viewController storyboardIdentifier="GRPWineListViewController" title="Wine List" id="G8W-27-NQF" customClass="GRPWineListViewController" sceneMemberID="viewController">
@@ -50,7 +50,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jbx-rL-Ihd">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GRPWineListTableViewCell" rowHeight="100" id="V5o-NC-WQB" customClass="GRPWineListTableViewCell">
@@ -62,7 +61,6 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50A-4b-oOR" userLabel="wineImageView">
                                                     <rect key="frame" x="10" y="10" width="80" height="80"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="1e3-lx-1qQ"/>
@@ -71,19 +69,16 @@
                                                 </view>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6a-s2-LjF" userLabel="titleLabel">
                                                     <rect key="frame" x="100" y="10" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibA-qF-czU" userLabel="ratingView" customClass="GRPRatingView">
                                                     <rect key="frame" x="100" y="41" width="210" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3x7-W8-Xo2" userLabel="dateLabel">
                                                     <rect key="frame" x="268" y="68" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -111,8 +106,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="G8W-27-NQF" id="K2s-hw-Ea6"/>
-                                    <outlet property="delegate" destination="G8W-27-NQF" id="QqG-3e-3Rx"/>
+                                    <outlet property="dataSource" destination="8ma-uU-6ux" id="UuA-ZR-Tq3"/>
+                                    <outlet property="delegate" destination="8ma-uU-6ux" id="eue-TU-eho"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -127,14 +122,21 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="lLv-Lg-hIk"/>
                     <connections>
+                        <outlet property="fetchController" destination="8ma-uU-6ux" id="1cI-0G-ZbZ"/>
                         <outlet property="tableView" destination="Jbx-rL-Ihd" id="GRv-ev-Cf5"/>
+                        <outlet property="tableViewController" destination="8ma-uU-6ux" id="Ja4-e6-ipY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fs5-oe-I1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="8ma-uU-6ux" customClass="FZCDSTableViewController">
+                    <connections>
+                        <outlet property="delegate" destination="G8W-27-NQF" id="gRx-IS-eKe"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="845" y="-293"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Item-->
         <scene sceneID="i3W-nN-8nZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iER-ta-wlK" sceneMemberID="viewController">

@@ -7,15 +7,22 @@
 //
 
 #import "GRPWineListViewController.h"
+
 #import "GRPViewControllerFactory.h"
+#import "GRPUserHandler.h"
+#import "FZCDSTableViewController.h"
 
 #import "GRPWineListTableViewCell.h"
+
+#import "GRPUser+GRP.h"
+#import "GRPReview+GRP.h"
+#import "GRPWine+GRP.h"
 
 static NSString *const GRPWineListTableViewCellIdentifier = @"GRPWineListTableViewCell";
 
 @interface GRPWineListViewController ()
+@property (strong, nonatomic) IBOutlet FZCDSTableViewController *tableViewController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *wines;
 @end
 
 @implementation GRPWineListViewController
@@ -23,31 +30,49 @@ static NSString *const GRPWineListTableViewCellIdentifier = @"GRPWineListTableVi
 {
 	[super viewDidLoad];
 	self.title = @"Your Grapes";
-	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGrape)];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addReview)];
+	
+	[self configureTableViewController];
 }
 
-#pragma mark - UITableView dataSoource and delegate
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (void)configureTableViewController
 {
-	return 10;
+	[self.tableViewController setObject:[GRPUserHandler currentUser] withKeyPath:@"reviews"];
+	self.tableViewController.autoResize = YES;
+	self.tableViewController.viewModelBuilder = [self reviewListViewModelBuilder];
+	[self.tableViewController setNeedsUpdateFetchRequest];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (FZViewModelBuilder *)reviewListViewModelBuilder
 {
-	GRPWineListTableViewCell *rtnCell = [tableView dequeueReusableCellWithIdentifier:GRPWineListTableViewCellIdentifier];
-	rtnCell.imageView.image = [UIImage imageNamed:@"images/wineImage.png"];
-	return rtnCell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	// TODO: Set wine, perform dynamic animation.
-	[self.navigationController pushViewController: [GRPViewControllerFactory wineDetailsViewControllerForWine:nil] animated:YES];
+	__weak GRPWineListViewController *tmpSelf = self;
+	
+	FZViewModelBuilder *rtnAdapter = [[FZViewModelBuilder alloc] init];
+	rtnAdapter.cellIdentifier = GRPWineListTableViewCellIdentifier;
+	rtnAdapter.cellConfigureBlock =
+	^(UITableView *inTableView, UITableViewCell *inTableViewCell, NSIndexPath *inIndexPath, id inUserData)
+	{
+		GRPWineListTableViewCell *tmpCell = (GRPWineListTableViewCell *)inTableViewCell;
+		GRPReview *tmpReview = inUserData;
+		
+	};
+	rtnAdapter.cellDidSelectBlock =
+	^(UITableView *inTableView, NSIndexPath *inIndexPath, id inUserData)
+	{
+		[inTableView deselectRowAtIndexPath:inIndexPath animated:YES];
+		[tmpSelf pushToReviewDetailsForReview:inUserData];
+	};
+	
+	return rtnAdapter;
 }
 
 #pragma mark - Navigation actions
-- (void)addGrape
+- (void)pushToReviewDetailsForReview:(GRPReview *)inReview
+{
+	[self.navigationController pushViewController:[GRPViewControllerFactory wineDetailsViewControllerForWine:inReview] animated:YES];
+}
+
+- (void)addReview
 {
 	// TODO: Set wine, perform dynamic animation.
 	UIViewController *tmpViewController = [GRPViewControllerFactory wineDetailsViewControllerForWine:nil];

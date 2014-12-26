@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@class GRPWine;
+@class GRPReview;
 
 @interface GRPViewControllerFactory : NSObject
-+ (UIViewController *)wineDetailsViewControllerForWine:(GRPWine *)inWine;
++ (UIViewController *)wineDetailsViewControllerForWine:(GRPReview *)inReview;
 @end

@@ -72,7 +72,7 @@
 		1D5FF0061A4DCC93002213A6 /* NSError+FZCDS.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF0051A4DCC93002213A6 /* NSError+FZCDS.m */; };
 		1D5FF0091A4DCD55002213A6 /* GRPUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF0081A4DCD55002213A6 /* GRPUserHandler.m */; };
 		1D5FF00C1A4DD487002213A6 /* GRPWine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF00B1A4DD487002213A6 /* GRPWine.m */; };
-		1DF5C4B919BCDC820064209C /* GRPWineDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4B819BCDC820064209C /* GRPWineDetailsViewController.m */; };
+		1DF5C4B919BCDC820064209C /* GRPReviewDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4B819BCDC820064209C /* GRPReviewDetailsViewController.m */; };
 		1DF5C4BC19BCDEE80064209C /* GRPViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4BB19BCDEE80064209C /* GRPViewControllerFactory.m */; };
 		36B9678AF9CE028350BF237E /* libPods-Grapes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8F471BE6B6D8045422EAA1 /* libPods-Grapes.a */; };
 		4FFA90E0186782D4003E2791 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFA90DF186782D4003E2791 /* Foundation.framework */; };
@@ -251,8 +251,8 @@
 		1D5FF0081A4DCD55002213A6 /* GRPUserHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPUserHandler.m; sourceTree = "<group>"; };
 		1D5FF00A1A4DD487002213A6 /* GRPWine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWine.h; sourceTree = "<group>"; };
 		1D5FF00B1A4DD487002213A6 /* GRPWine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWine.m; sourceTree = "<group>"; };
-		1DF5C4B719BCDC820064209C /* GRPWineDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWineDetailsViewController.h; sourceTree = "<group>"; };
-		1DF5C4B819BCDC820064209C /* GRPWineDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWineDetailsViewController.m; sourceTree = "<group>"; };
+		1DF5C4B719BCDC820064209C /* GRPReviewDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPReviewDetailsViewController.h; sourceTree = "<group>"; };
+		1DF5C4B819BCDC820064209C /* GRPReviewDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPReviewDetailsViewController.m; sourceTree = "<group>"; };
 		1DF5C4BA19BCDEE80064209C /* GRPViewControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPViewControllerFactory.h; sourceTree = "<group>"; };
 		1DF5C4BB19BCDEE80064209C /* GRPViewControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPViewControllerFactory.m; sourceTree = "<group>"; };
 		4FFA90DC186782D4003E2791 /* Grapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -742,8 +742,8 @@
 		4FFA91211867857E003E2791 /* Wine Details */ = {
 			isa = PBXGroup;
 			children = (
-				1DF5C4B719BCDC820064209C /* GRPWineDetailsViewController.h */,
-				1DF5C4B819BCDC820064209C /* GRPWineDetailsViewController.m */,
+				1DF5C4B719BCDC820064209C /* GRPReviewDetailsViewController.h */,
+				1DF5C4B819BCDC820064209C /* GRPReviewDetailsViewController.m */,
 			);
 			name = "Wine Details";
 			sourceTree = "<group>";
@@ -929,7 +929,7 @@
 				1D5FEF291A4DC636002213A6 /* GRPDataGenerator.m in Sources */,
 				1D5FEF351A4DC8C9002213A6 /* GRPReview.m in Sources */,
 				1D5FF0061A4DCC93002213A6 /* NSError+FZCDS.m in Sources */,
-				1DF5C4B919BCDC820064209C /* GRPWineDetailsViewController.m in Sources */,
+				1DF5C4B919BCDC820064209C /* GRPReviewDetailsViewController.m in Sources */,
 				1D5FEFB61A4DCB47002213A6 /* NSSet+KVO.m in Sources */,
 				1D5FEF381A4DC8C9002213A6 /* GRPUser.m in Sources */,
 				1D5FEFBC1A4DCB47002213A6 /* FZCDSManager.m in Sources */,
