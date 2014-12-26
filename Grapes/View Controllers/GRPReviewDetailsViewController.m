@@ -26,6 +26,8 @@ static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdju
 @property (nonatomic, assign) BOOL isEditingReview;
 @property (strong, nonatomic) IBOutlet GRPTableView *tableView;
 @property (strong, nonatomic) IBOutlet FZTableViewDelegate *tableViewDelegate;
+@property (nonatomic, strong) GRPKeyboardMediator *keyboardMediator;
+@property (nonatomic, strong) NSArray *editableIndexPathArray;
 @end
 
 @implementation GRPReviewDetailsViewController
@@ -47,9 +49,15 @@ static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdju
 		self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(close)];
 		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(close)];
 	}
+	[self prepareKeyboard];
 	[self configureTableViewDelgate];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	
+}
 - (void)viewDidDisappear:(BOOL)animated
 {
 	if (self.isCreatingReview)
@@ -58,11 +66,19 @@ static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdju
 	}
 }
 
+#pragma mark - Keyboard preparation -
+- (void)prepareKeyboard
+{
+	
+}
+
 #pragma mark - TableView configuration -
 - (void)configureTableViewDelgate
 {
 	__weak GRPReviewDetailsViewController *tmpSelf = self;
 	NSMutableArray *tmpCellModelArray = [NSMutableArray new];
+	NSMutableArray *tmpEditableIndexPathArray = [NSMutableArray new];
+	
 	// Wine name
 	FZTableViewCellViewModel *tmpCellModel = [FZTableViewCellViewModel tableViewCellViewModelWithReuseIdentifier:GRPAdjustableTextFieldTableViewCellIdentifier
 																										  height:55.0f
@@ -82,8 +98,10 @@ static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdju
 		[tmpCell.adjustableTextField becomeFirstResponder];
 	}];
 	[tmpCellModelArray addObject:tmpCellModel];
+	[tmpEditableIndexPathArray addObject:[NSIndexPath indexPathForRow:(tmpCellModelArray.count - 1) inSection:0]];
 	
 	[self.tableViewDelegate setSectionModelArray:@[[FZTableViewSectionModel sectionModelWithRowModels:tmpCellModelArray]]];
+	self.editableIndexPathArray = [NSArray arrayWithArray:tmpEditableIndexPathArray];
 }
 
 #pragma mark - Staging data creation and conversion -

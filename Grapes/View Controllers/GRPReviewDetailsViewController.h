@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class GRPReview;
-@interface GRPReviewDetailsViewController : UIViewController
+#import "GRPKeyboardMediator.h"
 
+@class GRPReview;
+@interface GRPReviewDetailsViewController : UIViewController <GRPKeyboardMediatable>
 @property (nonatomic, strong) GRPReview *review;
 
 @end

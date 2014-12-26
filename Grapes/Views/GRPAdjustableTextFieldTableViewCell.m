@@ -29,5 +29,9 @@
 		self.textFieldDidChangeBlock(self.adjustableTextField.text);
 	}
 }
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+	[self.adjustableTextField resignFirstResponder];
+	return NO;
+}
 @end

@@ -10,3 +10,6 @@
 [submodule "Grapes/Libraries/FZViewModelBuilders"]
 	path = Grapes/Libraries/FZViewModelBuilders
 	url = git@gitlab.fuzzhq.com:ios-modules/viewmodelbuilders.git
+[submodule "Grapes/Libraries/FZKeyboardAppearanceEventResponder"]
+	path = Grapes/Libraries/FZKeyboardAppearanceEventResponder
+	url = git@gitlab.fuzzhq.com:ios-modules/keyboardappearanceeventresponder.git

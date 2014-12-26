@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Woodcutting. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "GRPTableViewCell.h"
 
 #import "GRPEditableTableViewCell.h"
 
-@interface GRPAdjustableTextFieldTableViewCell : UITableViewCell <GRPEditableTableViewCell>
+@interface GRPAdjustableTextFieldTableViewCell : GRPTableViewCell <GRPEditableTableViewCell, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *adjustableTextField;
 @property (nonatomic, copy) void (^textFieldDidChangeBlock)(NSString *inTextFieldText);
 @end

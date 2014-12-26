@@ -78,6 +78,8 @@
 		1DFC7A901A4DE5CC00646F1A /* GRPAdjustableTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7A8F1A4DE5CC00646F1A /* GRPAdjustableTextFieldTableViewCell.m */; };
 		1DFC7A941A4DEAE800646F1A /* GRPTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7A931A4DEAE800646F1A /* GRPTableView.m */; };
 		1DFC7A971A4DEB0600646F1A /* GRPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7A961A4DEB0600646F1A /* GRPTableViewCell.m */; };
+		1DFC7A9B1A4DEF2000646F1A /* FZKeyboardAppearanceEventResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7A9A1A4DEF2000646F1A /* FZKeyboardAppearanceEventResponder.m */; };
+		1DFC7A9E1A4DEF4900646F1A /* GRPKeyboardMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7A9D1A4DEF4900646F1A /* GRPKeyboardMediator.m */; };
 		36B9678AF9CE028350BF237E /* libPods-Grapes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8F471BE6B6D8045422EAA1 /* libPods-Grapes.a */; };
 		4FFA90E0186782D4003E2791 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFA90DF186782D4003E2791 /* Foundation.framework */; };
 		4FFA90E2186782D4003E2791 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFA90E1186782D4003E2791 /* CoreGraphics.framework */; };
@@ -268,6 +270,10 @@
 		1DFC7A931A4DEAE800646F1A /* GRPTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPTableView.m; sourceTree = "<group>"; };
 		1DFC7A951A4DEB0600646F1A /* GRPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPTableViewCell.h; sourceTree = "<group>"; };
 		1DFC7A961A4DEB0600646F1A /* GRPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPTableViewCell.m; sourceTree = "<group>"; };
+		1DFC7A991A4DEF2000646F1A /* FZKeyboardAppearanceEventResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZKeyboardAppearanceEventResponder.h; sourceTree = "<group>"; };
+		1DFC7A9A1A4DEF2000646F1A /* FZKeyboardAppearanceEventResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZKeyboardAppearanceEventResponder.m; sourceTree = "<group>"; };
+		1DFC7A9C1A4DEF4900646F1A /* GRPKeyboardMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPKeyboardMediator.h; sourceTree = "<group>"; };
+		1DFC7A9D1A4DEF4900646F1A /* GRPKeyboardMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPKeyboardMediator.m; sourceTree = "<group>"; };
 		4FFA90DC186782D4003E2791 /* Grapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFA90DF186782D4003E2791 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FFA90E1186782D4003E2791 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -343,6 +349,7 @@
 		1D5FEF431A4DCB1D002213A6 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				1DFC7A981A4DEF2000646F1A /* FZKeyboardAppearanceEventRespond */,
 				1D5FEFD51A4DCB6E002213A6 /* FZViewModelBuilders */,
 				1D5FEFCE1A4DCB5D002213A6 /* FZTableViewDelegate */,
 				1D5FEF441A4DCB47002213A6 /* FZCDS */,
@@ -580,6 +587,16 @@
 			name = "Review Details";
 			sourceTree = "<group>";
 		};
+		1DFC7A981A4DEF2000646F1A /* FZKeyboardAppearanceEventRespond */ = {
+			isa = PBXGroup;
+			children = (
+				1DFC7A991A4DEF2000646F1A /* FZKeyboardAppearanceEventResponder.h */,
+				1DFC7A9A1A4DEF2000646F1A /* FZKeyboardAppearanceEventResponder.m */,
+			);
+			name = FZKeyboardAppearanceEventRespond;
+			path = Libraries/FZKeyboardAppearanceEventResponder/FZKeyboardAppearanceHandler/Source;
+			sourceTree = "<group>";
+		};
 		3981D078A2CB2F6BE92A65F8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -732,6 +749,8 @@
 				1D5FEF2B1A4DC65B002213A6 /* GRPDataSifter.m */,
 				1D5FF0071A4DCD55002213A6 /* GRPUserHandler.h */,
 				1D5FF0081A4DCD55002213A6 /* GRPUserHandler.m */,
+				1DFC7A9C1A4DEF4900646F1A /* GRPKeyboardMediator.h */,
+				1DFC7A9D1A4DEF4900646F1A /* GRPKeyboardMediator.m */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -943,6 +962,7 @@
 				1D5FEFCA1A4DCB47002213A6 /* FZCDSFetchOperation.m in Sources */,
 				1D5FEFA91A4DCB47002213A6 /* FZCDSActionAddHeader.m in Sources */,
 				1DFC7A901A4DE5CC00646F1A /* GRPAdjustableTextFieldTableViewCell.m in Sources */,
+				1DFC7A9E1A4DEF4900646F1A /* GRPKeyboardMediator.m in Sources */,
 				1D5FF0001A4DCB6E002213A6 /* FZViewModel.m in Sources */,
 				1D5FEFB51A4DCB47002213A6 /* NSObject+AssociatedObject.m in Sources */,
 				1D5FEFB81A4DCB47002213A6 /* UIViewController+FZCDS.m in Sources */,
@@ -990,6 +1010,7 @@
 				1D5FEFAD1A4DCB47002213A6 /* FZCDSActionRemoveCookie.m in Sources */,
 				1D5FEFCD1A4DCB47002213A6 /* FZCDSTestSupport.m in Sources */,
 				1D5FEFBD1A4DCB47002213A6 /* FZCDSTypeConverter.m in Sources */,
+				1DFC7A9B1A4DEF2000646F1A /* FZKeyboardAppearanceEventResponder.m in Sources */,
 				1D5FEFAF1A4DCB47002213A6 /* FZCDSActionSetProperty.m in Sources */,
 				1D5FEFC51A4DCB47002213A6 /* FZCDSLog.m in Sources */,
 				1D5FEFA81A4DCB47002213A6 /* FZCDSActionAddGlobalVariable.m in Sources */,
