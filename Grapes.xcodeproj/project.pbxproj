@@ -39,7 +39,6 @@
 		1D5FEFBB1A4DCB47002213A6 /* FZCDSManager+URLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF751A4DCB47002213A6 /* FZCDSManager+URLOperation.m */; };
 		1D5FEFBC1A4DCB47002213A6 /* FZCDSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF771A4DCB47002213A6 /* FZCDSManager.m */; };
 		1D5FEFBD1A4DCB47002213A6 /* FZCDSTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF791A4DCB47002213A6 /* FZCDSTypeConverter.m */; };
-		1D5FEFBE1A4DCB47002213A6 /* FZCDSFetchArrayCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF7C1A4DCB47002213A6 /* FZCDSFetchArrayCollectionViewController.m */; };
 		1D5FEFBF1A4DCB47002213A6 /* FZCDSFetchArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF7E1A4DCB47002213A6 /* FZCDSFetchArrayController.m */; };
 		1D5FEFC01A4DCB47002213A6 /* FZCDSFetchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF831A4DCB47002213A6 /* FZCDSFetchController.m */; };
 		1D5FEFC11A4DCB47002213A6 /* FZCDSFetchObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF861A4DCB47002213A6 /* FZCDSFetchObjectController.m */; };
@@ -70,6 +69,8 @@
 		1D5FEFFE1A4DCB6E002213A6 /* FZTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEFEF1A4DCB6E002213A6 /* FZTableViewCellViewModel.m */; };
 		1D5FEFFF1A4DCB6E002213A6 /* FZTableViewSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEFF11A4DCB6E002213A6 /* FZTableViewSectionModel.m */; };
 		1D5FF0001A4DCB6E002213A6 /* FZViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEFF31A4DCB6E002213A6 /* FZViewModel.m */; };
+		1D5FF0031A4DCBEA002213A6 /* FZCDSCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF0021A4DCBEA002213A6 /* FZCDSCollectionController.m */; };
+		1D5FF0061A4DCC93002213A6 /* NSError+FZCDS.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF0051A4DCC93002213A6 /* NSError+FZCDS.m */; };
 		1DF5C4B919BCDC820064209C /* GRPWineDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4B819BCDC820064209C /* GRPWineDetailsViewController.m */; };
 		1DF5C4BC19BCDEE80064209C /* GRPViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4BB19BCDEE80064209C /* GRPViewControllerFactory.m */; };
 		36B9678AF9CE028350BF237E /* libPods-Grapes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8F471BE6B6D8045422EAA1 /* libPods-Grapes.a */; };
@@ -172,8 +173,6 @@
 		1D5FEF771A4DCB47002213A6 /* FZCDSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZCDSManager.m; sourceTree = "<group>"; };
 		1D5FEF781A4DCB47002213A6 /* FZCDSTypeConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZCDSTypeConverter.h; sourceTree = "<group>"; };
 		1D5FEF791A4DCB47002213A6 /* FZCDSTypeConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZCDSTypeConverter.m; sourceTree = "<group>"; };
-		1D5FEF7B1A4DCB47002213A6 /* FZCDSFetchArrayCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZCDSFetchArrayCollectionViewController.h; sourceTree = "<group>"; };
-		1D5FEF7C1A4DCB47002213A6 /* FZCDSFetchArrayCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZCDSFetchArrayCollectionViewController.m; sourceTree = "<group>"; };
 		1D5FEF7D1A4DCB47002213A6 /* FZCDSFetchArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZCDSFetchArrayController.h; sourceTree = "<group>"; };
 		1D5FEF7E1A4DCB47002213A6 /* FZCDSFetchArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZCDSFetchArrayController.m; sourceTree = "<group>"; };
 		1D5FEF7F1A4DCB47002213A6 /* FZCDSFetchArrayTableViewPagingControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZCDSFetchArrayTableViewPagingControllerDelegate.h; sourceTree = "<group>"; };
@@ -245,6 +244,10 @@
 		1D5FEFF11A4DCB6E002213A6 /* FZTableViewSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZTableViewSectionModel.m; sourceTree = "<group>"; };
 		1D5FEFF21A4DCB6E002213A6 /* FZViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZViewModel.h; sourceTree = "<group>"; };
 		1D5FEFF31A4DCB6E002213A6 /* FZViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZViewModel.m; sourceTree = "<group>"; };
+		1D5FF0011A4DCBEA002213A6 /* FZCDSCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZCDSCollectionController.h; sourceTree = "<group>"; };
+		1D5FF0021A4DCBEA002213A6 /* FZCDSCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZCDSCollectionController.m; sourceTree = "<group>"; };
+		1D5FF0041A4DCC93002213A6 /* NSError+FZCDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+FZCDS.h"; sourceTree = "<group>"; };
+		1D5FF0051A4DCC93002213A6 /* NSError+FZCDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+FZCDS.m"; sourceTree = "<group>"; };
 		1DF5C4B719BCDC820064209C /* GRPWineDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWineDetailsViewController.h; sourceTree = "<group>"; };
 		1DF5C4B819BCDC820064209C /* GRPWineDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWineDetailsViewController.m; sourceTree = "<group>"; };
 		1DF5C4BA19BCDEE80064209C /* GRPViewControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPViewControllerFactory.h; sourceTree = "<group>"; };
@@ -375,6 +378,8 @@
 		1D5FEF591A4DCB47002213A6 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				1D5FF0041A4DCC93002213A6 /* NSError+FZCDS.h */,
+				1D5FF0051A4DCC93002213A6 /* NSError+FZCDS.m */,
 				1D5FEF5A1A4DCB47002213A6 /* FZCDSUIResponderAddition.h */,
 				1D5FEF5B1A4DCB47002213A6 /* FZCDSUIResponderAddition.m */,
 				1D5FEF5C1A4DCB47002213A6 /* NSEntityDescription+Cache.h */,
@@ -420,8 +425,8 @@
 		1D5FEF7A1A4DCB47002213A6 /* Fetch Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1D5FEF7B1A4DCB47002213A6 /* FZCDSFetchArrayCollectionViewController.h */,
-				1D5FEF7C1A4DCB47002213A6 /* FZCDSFetchArrayCollectionViewController.m */,
+				1D5FF0011A4DCBEA002213A6 /* FZCDSCollectionController.h */,
+				1D5FF0021A4DCBEA002213A6 /* FZCDSCollectionController.m */,
 				1D5FEF7D1A4DCB47002213A6 /* FZCDSFetchArrayController.h */,
 				1D5FEF7E1A4DCB47002213A6 /* FZCDSFetchArrayController.m */,
 				1D5FEF7F1A4DCB47002213A6 /* FZCDSFetchArrayTableViewPagingControllerDelegate.h */,
@@ -887,7 +892,6 @@
 				1D5FEFAA1A4DCB47002213A6 /* FZCDSActionCreateCookie.m in Sources */,
 				1D5FEFD41A4DCB5D002213A6 /* FZTableViewDelegate.m in Sources */,
 				1D5FEFAE1A4DCB47002213A6 /* FZCDSActionRemoveHeader.m in Sources */,
-				1D5FEFBE1A4DCB47002213A6 /* FZCDSFetchArrayCollectionViewController.m in Sources */,
 				1D5FEFC91A4DCB47002213A6 /* FZCDSFetchObjectOperation.m in Sources */,
 				1D5FEFC31A4DCB47002213A6 /* FZCDSPagingTableViewController.m in Sources */,
 				4FFA913718678F2B003E2791 /* GRPAppearanceHandler.m in Sources */,
@@ -919,6 +923,7 @@
 				1D5FEFC11A4DCB47002213A6 /* FZCDSFetchObjectController.m in Sources */,
 				1D5FEF291A4DC636002213A6 /* GRPDataGenerator.m in Sources */,
 				1D5FEF351A4DC8C9002213A6 /* GRPReview.m in Sources */,
+				1D5FF0061A4DCC93002213A6 /* NSError+FZCDS.m in Sources */,
 				1DF5C4B919BCDC820064209C /* GRPWineDetailsViewController.m in Sources */,
 				1D5FEFB61A4DCB47002213A6 /* NSSet+KVO.m in Sources */,
 				1D5FEF381A4DC8C9002213A6 /* GRPUser.m in Sources */,
@@ -954,6 +959,7 @@
 				4FFA913B1867A5C3003E2791 /* GRPWineImageView.m in Sources */,
 				1D5FEFC01A4DCB47002213A6 /* FZCDSFetchController.m in Sources */,
 				1D5FEFF71A4DCB6E002213A6 /* FZViewModelBuilderGroupedByFirstLetter.m in Sources */,
+				1D5FF0031A4DCBEA002213A6 /* FZCDSCollectionController.m in Sources */,
 				1D5FEFFA1A4DCB6E002213A6 /* FZViewModelBuilderGroupSquashing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

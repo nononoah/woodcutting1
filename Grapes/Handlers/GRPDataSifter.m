@@ -12,7 +12,7 @@
 
 + (NSArray *)allWines
 {
-	
+	return nil;
 }
 
 @end
