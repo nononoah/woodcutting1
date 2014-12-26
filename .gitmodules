@@ -13,3 +13,9 @@
 [submodule "Grapes/Libraries/FZKeyboardAppearanceEventResponder"]
 	path = Grapes/Libraries/FZKeyboardAppearanceEventResponder
 	url = git@gitlab.fuzzhq.com:ios-modules/keyboardappearanceeventresponder.git
+[submodule "Grapes/Libraries/FZAutoResizingTextView"]
+	path = Grapes/Libraries/FZAutoResizingTextView
+	url = git@gitlab.fuzzhq.com:ios-modules/autoresizingtextview.git
+[submodule "Grapes/Libraries/FZMessagesViewMediator"]
+	path = Grapes/Libraries/FZMessagesViewMediator
+	url = git@gitlab.fuzzhq.com:ios-modules/fzmessagesviewmediator.git
