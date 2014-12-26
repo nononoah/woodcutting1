@@ -1,0 +1,12 @@
+[submodule "Grapes/Libraries/FZCDS"]
+	path = Grapes/Libraries/FZCDS
+	url = git@gitlab.fuzzhq.com:ios-modules/core-data-sync.git
+[submodule "Grapes/Libraries/FZTableViewDelegate"]
+	path = Grapes/Libraries/FZTableViewDelegate
+	url = git@gitlab.fuzzhq.com:ios-modules/fztableviewdelegate.git
+[submodule "Grapes/Libraries/FZViewModeelBuilders"]
+	path = Grapes/Libraries/FZViewModeelBuilders
+	url = git@gitlab.fuzzhq.com:ios-modules/viewmodelbuilders.git
+[submodule "Grapes/Libraries/FZViewModelBuilders"]
+	path = Grapes/Libraries/FZViewModelBuilders
+	url = git@gitlab.fuzzhq.com:ios-modules/viewmodelbuilders.git
