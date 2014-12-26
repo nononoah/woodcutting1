@@ -1,5 +1,5 @@
 //
-//  GRPWine.h
+//  GRPUser.h
 //  Grapes
 //
 //  Created by Noah Blake on 12/26/14.
@@ -11,15 +11,14 @@
 
 @class GRPReview;
 
-@interface GRPWine : NSManagedObject
+@interface GRPUser : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * type;
-@property (nonatomic, retain) NSString * imageURL;
-@property (nonatomic, retain) NSString * wineID;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * userID;
 @property (nonatomic, retain) NSSet *reviews;
 @end
 
-@interface GRPWine (CoreDataGeneratedAccessors)
+@interface GRPUser (CoreDataGeneratedAccessors)
 
 - (void)addReviewsObject:(GRPReview *)value;
 - (void)removeReviewsObject:(GRPReview *)value;

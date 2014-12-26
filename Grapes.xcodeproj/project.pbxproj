@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D5FEF291A4DC636002213A6 /* GRPDataGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF281A4DC636002213A6 /* GRPDataGenerator.m */; };
+		1D5FEF2C1A4DC65B002213A6 /* GRPDataSifter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF2B1A4DC65B002213A6 /* GRPDataSifter.m */; };
+		1D5FEF2F1A4DC6A7002213A6 /* Grapes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF2D1A4DC6A7002213A6 /* Grapes.xcdatamodeld */; };
+		1D5FEF321A4DC8C9002213A6 /* GRPWine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF311A4DC8C9002213A6 /* GRPWine.m */; };
+		1D5FEF351A4DC8C9002213A6 /* GRPReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF341A4DC8C9002213A6 /* GRPReview.m */; };
+		1D5FEF381A4DC8C9002213A6 /* GRPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF371A4DC8C9002213A6 /* GRPUser.m */; };
+		1D5FEF3B1A4DC8E2002213A6 /* GRPUser+GRP.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF3A1A4DC8E2002213A6 /* GRPUser+GRP.m */; };
+		1D5FEF3E1A4DC8ED002213A6 /* GRPReview+GRP.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF3D1A4DC8ED002213A6 /* GRPReview+GRP.m */; };
+		1D5FEF411A4DC8FD002213A6 /* GRPWine+GRP.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FEF401A4DC8FD002213A6 /* GRPWine+GRP.m */; };
 		1DF5C4B919BCDC820064209C /* GRPWineDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4B819BCDC820064209C /* GRPWineDetailsViewController.m */; };
 		1DF5C4BC19BCDEE80064209C /* GRPViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4BB19BCDEE80064209C /* GRPViewControllerFactory.m */; };
 		4FFA90E0186782D4003E2791 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFA90DF186782D4003E2791 /* Foundation.framework */; };
@@ -22,7 +31,6 @@
 		4FFA9109186782D4003E2791 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FFA9107186782D4003E2791 /* InfoPlist.strings */; };
 		4FFA910B186782D4003E2791 /* GrapesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA910A186782D4003E2791 /* GrapesTests.m */; };
 		4FFA911E18678552003E2791 /* WineList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FFA911D18678552003E2791 /* WineList.storyboard */; };
-		4FFA9125186785CA003E2791 /* GRPWine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA9124186785CA003E2791 /* GRPWine.m */; };
 		4FFA912818678640003E2791 /* GRPWineListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA912718678640003E2791 /* GRPWineListViewController.m */; };
 		4FFA912E18678993003E2791 /* GRPWineListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA912D18678993003E2791 /* GRPWineListTableViewCell.m */; };
 		4FFA913418678F15003E2791 /* UIColor+GRP.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA913318678F15003E2791 /* UIColor+GRP.m */; };
@@ -42,6 +50,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D5FEF271A4DC636002213A6 /* GRPDataGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPDataGenerator.h; sourceTree = "<group>"; };
+		1D5FEF281A4DC636002213A6 /* GRPDataGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPDataGenerator.m; sourceTree = "<group>"; };
+		1D5FEF2A1A4DC65B002213A6 /* GRPDataSifter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPDataSifter.h; sourceTree = "<group>"; };
+		1D5FEF2B1A4DC65B002213A6 /* GRPDataSifter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPDataSifter.m; sourceTree = "<group>"; };
+		1D5FEF2E1A4DC6A7002213A6 /* Grapes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Grapes.xcdatamodel; sourceTree = "<group>"; };
+		1D5FEF301A4DC8C9002213A6 /* GRPWine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWine.h; sourceTree = "<group>"; };
+		1D5FEF311A4DC8C9002213A6 /* GRPWine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWine.m; sourceTree = "<group>"; };
+		1D5FEF331A4DC8C9002213A6 /* GRPReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPReview.h; sourceTree = "<group>"; };
+		1D5FEF341A4DC8C9002213A6 /* GRPReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPReview.m; sourceTree = "<group>"; };
+		1D5FEF361A4DC8C9002213A6 /* GRPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPUser.h; sourceTree = "<group>"; };
+		1D5FEF371A4DC8C9002213A6 /* GRPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPUser.m; sourceTree = "<group>"; };
+		1D5FEF391A4DC8E2002213A6 /* GRPUser+GRP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GRPUser+GRP.h"; sourceTree = "<group>"; };
+		1D5FEF3A1A4DC8E2002213A6 /* GRPUser+GRP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GRPUser+GRP.m"; sourceTree = "<group>"; };
+		1D5FEF3C1A4DC8ED002213A6 /* GRPReview+GRP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GRPReview+GRP.h"; sourceTree = "<group>"; };
+		1D5FEF3D1A4DC8ED002213A6 /* GRPReview+GRP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GRPReview+GRP.m"; sourceTree = "<group>"; };
+		1D5FEF3F1A4DC8FD002213A6 /* GRPWine+GRP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GRPWine+GRP.h"; sourceTree = "<group>"; };
+		1D5FEF401A4DC8FD002213A6 /* GRPWine+GRP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GRPWine+GRP.m"; sourceTree = "<group>"; };
 		1DF5C4B719BCDC820064209C /* GRPWineDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWineDetailsViewController.h; sourceTree = "<group>"; };
 		1DF5C4B819BCDC820064209C /* GRPWineDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWineDetailsViewController.m; sourceTree = "<group>"; };
 		1DF5C4BA19BCDEE80064209C /* GRPViewControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPViewControllerFactory.h; sourceTree = "<group>"; };
@@ -63,8 +88,6 @@
 		4FFA9108186782D4003E2791 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4FFA910A186782D4003E2791 /* GrapesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrapesTests.m; sourceTree = "<group>"; };
 		4FFA911D18678552003E2791 /* WineList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WineList.storyboard; sourceTree = "<group>"; };
-		4FFA9123186785CA003E2791 /* GRPWine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWine.h; sourceTree = "<group>"; };
-		4FFA9124186785CA003E2791 /* GRPWine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWine.m; sourceTree = "<group>"; };
 		4FFA912618678640003E2791 /* GRPWineListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWineListViewController.h; sourceTree = "<group>"; };
 		4FFA912718678640003E2791 /* GRPWineListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWineListViewController.m; sourceTree = "<group>"; };
 		4FFA912C18678993003E2791 /* GRPWineListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWineListTableViewCell.h; sourceTree = "<group>"; };
@@ -103,6 +126,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D5FEF421A4DC902002213A6 /* Base Models */ = {
+			isa = PBXGroup;
+			children = (
+				1D5FEF361A4DC8C9002213A6 /* GRPUser.h */,
+				1D5FEF371A4DC8C9002213A6 /* GRPUser.m */,
+				1D5FEF331A4DC8C9002213A6 /* GRPReview.h */,
+				1D5FEF341A4DC8C9002213A6 /* GRPReview.m */,
+				1D5FEF301A4DC8C9002213A6 /* GRPWine.h */,
+				1D5FEF311A4DC8C9002213A6 /* GRPWine.m */,
+			);
+			name = "Base Models";
+			sourceTree = "<group>";
+		};
 		4FFA90D3186782D4003E2791 = {
 			isa = PBXGroup;
 			children = (
@@ -216,8 +252,14 @@
 		4FFA9118186784B5003E2791 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4FFA9123186785CA003E2791 /* GRPWine.h */,
-				4FFA9124186785CA003E2791 /* GRPWine.m */,
+				1D5FEF421A4DC902002213A6 /* Base Models */,
+				1D5FEF2D1A4DC6A7002213A6 /* Grapes.xcdatamodeld */,
+				1D5FEF391A4DC8E2002213A6 /* GRPUser+GRP.h */,
+				1D5FEF3A1A4DC8E2002213A6 /* GRPUser+GRP.m */,
+				1D5FEF3C1A4DC8ED002213A6 /* GRPReview+GRP.h */,
+				1D5FEF3D1A4DC8ED002213A6 /* GRPReview+GRP.m */,
+				1D5FEF3F1A4DC8FD002213A6 /* GRPWine+GRP.h */,
+				1D5FEF401A4DC8FD002213A6 /* GRPWine+GRP.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,6 +271,10 @@
 				4FFA913618678F2B003E2791 /* GRPAppearanceHandler.m */,
 				1DF5C4BA19BCDEE80064209C /* GRPViewControllerFactory.h */,
 				1DF5C4BB19BCDEE80064209C /* GRPViewControllerFactory.m */,
+				1D5FEF271A4DC636002213A6 /* GRPDataGenerator.h */,
+				1D5FEF281A4DC636002213A6 /* GRPDataGenerator.m */,
+				1D5FEF2A1A4DC65B002213A6 /* GRPDataSifter.h */,
+				1D5FEF2B1A4DC65B002213A6 /* GRPDataSifter.m */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -378,15 +424,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D5FEF321A4DC8C9002213A6 /* GRPWine.m in Sources */,
 				4FFA913718678F2B003E2791 /* GRPAppearanceHandler.m in Sources */,
 				4FFA912818678640003E2791 /* GRPWineListViewController.m in Sources */,
+				1D5FEF411A4DC8FD002213A6 /* GRPWine+GRP.m in Sources */,
 				4FFA913418678F15003E2791 /* UIColor+GRP.m in Sources */,
+				1D5FEF2F1A4DC6A7002213A6 /* Grapes.xcdatamodeld in Sources */,
+				1D5FEF3B1A4DC8E2002213A6 /* GRPUser+GRP.m in Sources */,
 				4FFA90F0186782D4003E2791 /* GRPAppDelegate.m in Sources */,
 				4FFA912E18678993003E2791 /* GRPWineListTableViewCell.m in Sources */,
 				4FFA90EC186782D4003E2791 /* main.m in Sources */,
+				1D5FEF3E1A4DC8ED002213A6 /* GRPReview+GRP.m in Sources */,
 				1DF5C4BC19BCDEE80064209C /* GRPViewControllerFactory.m in Sources */,
+				1D5FEF291A4DC636002213A6 /* GRPDataGenerator.m in Sources */,
+				1D5FEF351A4DC8C9002213A6 /* GRPReview.m in Sources */,
 				1DF5C4B919BCDC820064209C /* GRPWineDetailsViewController.m in Sources */,
-				4FFA9125186785CA003E2791 /* GRPWine.m in Sources */,
+				1D5FEF381A4DC8C9002213A6 /* GRPUser.m in Sources */,
+				1D5FEF2C1A4DC65B002213A6 /* GRPDataSifter.m in Sources */,
 				4FFA913E1867A867003E2791 /* GRPRatingView.m in Sources */,
 				4FFA913B1867A5C3003E2791 /* GRPWineImageView.m in Sources */,
 			);
@@ -597,6 +651,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1D5FEF2D1A4DC6A7002213A6 /* Grapes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1D5FEF2E1A4DC6A7002213A6 /* Grapes.xcdatamodel */,
+			);
+			currentVersion = 1D5FEF2E1A4DC6A7002213A6 /* Grapes.xcdatamodel */;
+			path = Grapes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4FFA90D4186782D4003E2791 /* Project object */;
 }
