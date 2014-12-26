@@ -140,7 +140,8 @@ static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdju
 - (void)scrubStagingReview
 {
 	self.review.wine.name = nil;
-	
+	self.review.wine.countryOfOrigin = nil;
+	self.review.wine.type = nil;
 }
 
 - (void)convertReview

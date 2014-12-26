@@ -15,6 +15,9 @@
 
 @interface GRPKeyboardAttachmentView : UIView
 
+@property (nonatomic, strong) UIButton *previousButton;
+@property (nonatomic, strong) UIButton *nextButton;
+
 + (instancetype)keyboardAttachmentViewForFrame:(CGRect)inFrame responder:(id <GRPKeyboardAttachmentResponder>)inResponder;
 
 @end

@@ -59,9 +59,9 @@
 	
 	NSIndexPath *tmpIndexPath = [self.mediatedViewController.tableView indexPathForCell:_currentlyEditingTableViewCell];
 	// Hide previous button if this is the first cell
-	// self.keyboardAttachmentView.previousButton.enabled = !(tmpIndexPath.row == 2);
+	self.keyboardAttachmentView.previousButton.enabled = !(tmpIndexPath.row == 0);
 	// Hide close button if this is the last cell
-	// self.keyboardAttachmentView.nextButton.enabled = ([self nextEditableIndexPathFromRow:tmpIndexPath.row] != nil);
+	self.keyboardAttachmentView.nextButton.enabled = ([self nextEditableIndexPathFromRow:tmpIndexPath.row] != nil);
 }
 
 - (void)previousWasTapped
@@ -78,10 +78,8 @@
 - (void)scrollToActivateCellAtIndexPath:(NSIndexPath *)inIndexPath
 {
 	[self.mediatedViewController.tableView scrollToRowAtIndexPath:inIndexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-		UITableViewCell <GRPEditableTableViewCell> *tmpCell = (UITableViewCell <GRPEditableTableViewCell> *)[self.mediatedViewController.tableView cellForRowAtIndexPath:inIndexPath];
-		[tmpCell beginEditing];
-	});
+	UITableViewCell <GRPEditableTableViewCell> *tmpCell = (UITableViewCell <GRPEditableTableViewCell> *)[self.mediatedViewController.tableView cellForRowAtIndexPath:inIndexPath];
+	[tmpCell beginEditing];
 }
 
 - (NSIndexPath *)previousEditableIndexPathFromRow:(NSInteger)inRow
