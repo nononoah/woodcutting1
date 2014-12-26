@@ -43,18 +43,20 @@ static NSString *const GRPEditableRatingTableViewCellIdentifier = @"GRPEditableR
 	if (self.review)
 	{
 		self.isCreatingReview = NO;
+		self.isEditingReview = NO;
 		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(beginEditing)];
 	}
 	// User is addding a new wine in a modal context. Add save and cancel button.
 	else
 	{
 		self.isCreatingReview = YES;
+		self.isEditingReview = YES;
 		self.review = [self stagingReview];
 		self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(close)];
 		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
 	}
 	[self prepareKeyboard];
-	[self configureTableViewDelgate];
+	[self configureTableViewDelegate];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -79,7 +81,7 @@ static NSString *const GRPEditableRatingTableViewCellIdentifier = @"GRPEditableR
 }
 
 #pragma mark - TableView configuration -
-- (void)configureTableViewDelgate
+- (void)configureTableViewDelegate
 {
 	self.tableViewDelegate.autoResize = YES;
 	
@@ -101,7 +103,7 @@ static NSString *const GRPEditableRatingTableViewCellIdentifier = @"GRPEditableR
 	[tmpEditableIndexPathArray addObject:[NSIndexPath indexPathForRow:(tmpCellModelArray.count - 1) inSection:0]];
 	
 	// Wine type
-	tmpCellModel = [self adjustableTextFieldModelWithText:tmpSelf.review.wine.type placeholder:@"Enter the wine's type" textFieldDidChangeBlock: ^(NSString *inTextFieldText){[tmpSelf setReviewValue:inTextFieldText forKeyPath:@"wine.type"];}];
+	tmpCellModel = [self adjustableTextFieldModelWithText:tmpSelf.review.wine.type placeholder:@"Enter the wine's type" textFieldDidChangeBlock:^(NSString *inTextFieldText){[tmpSelf setReviewValue:inTextFieldText forKeyPath:@"wine.type"];}];
 	[tmpCellModelArray addObject:tmpCellModel];
 	[tmpEditableIndexPathArray addObject:[NSIndexPath indexPathForRow:(tmpCellModelArray.count - 1) inSection:0]];
 	
@@ -128,6 +130,7 @@ static NSString *const GRPEditableRatingTableViewCellIdentifier = @"GRPEditableR
 												  tmpCell.textFieldDidChangeBlock = inTextFieldDidChangeBlock;
 												  __weak GRPAdjustableTextFieldTableViewCell *blkCell = tmpCell;
 												  tmpCell.textFieldDidBeginEditingBlock = ^{[tmpSelf.keyboardMediator setCurrentlyEditingTableViewCell:blkCell];};
+												  [tmpCell editingEnabled:tmpSelf.isEditingReview];
 											  }
 																								  didSelectBlock:[self didSelectBlockForEditableCell]];
 	return rtnCellModel;
@@ -141,19 +144,7 @@ static NSString *const GRPEditableRatingTableViewCellIdentifier = @"GRPEditableR
 											  ^(id inAssemblyView, id inCell, NSIndexPath *inIndexPath, id inUserData)
 											  {
 												  GRPReviewTextViewTableViewCell *tmpCell = (GRPReviewTextViewTableViewCell *)inCell;
-												  if (tmpSelf.review.text.length)
-												  {
-													  tmpCell.messagesView.messagesTextView.text = tmpSelf.review.text;
-													  tmpCell.messagesView.placeholderLabel.hidden = YES;
-													  tmpCell.messagesView.characterCountLimitLabel.hidden = NO;
-													  tmpCell.messagesView.characterCountLimitLabel.text = [NSString stringWithFormat:@"%i / 200", (int)tmpSelf.review.text.length];
-												  }
-												  else
-												  {
-													  tmpCell.messagesView.messagesTextView.text = nil;
-													  tmpCell.messagesView.placeholderLabel.hidden = NO;
-													  tmpCell.messagesView.characterCountLimitLabel.hidden = YES;
-												  }
+												  [tmpCell.messagesViewMediator updateForInitialTextViewText:tmpSelf.review.text];
 												  __weak GRPReviewTextViewTableViewCell *blkCell = tmpCell;
 												  tmpCell.messagesViewMediator.shouldBeginEditingBlock =
 												  ^BOOL (UITextView *inTextView)
@@ -180,7 +171,7 @@ static NSString *const GRPEditableRatingTableViewCellIdentifier = @"GRPEditableR
 													  [tmpSelf.tableView scrollToRowAtIndexPath:inIndexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
 													  [tmpSelf.tableViewDelegate resizeTableViewCellAtIndexPath:inIndexPath];
 												  };
-												  
+												  [tmpCell editingEnabled:tmpSelf.isEditingReview];
 											  }
 																								  didSelectBlock:[self didSelectBlockForEditableCell]];
 	return rtnCellModel;
@@ -188,11 +179,15 @@ static NSString *const GRPEditableRatingTableViewCellIdentifier = @"GRPEditableR
 
 - (FZCellViewModelDidSelectBlock)didSelectBlockForEditableCell
 {
+	__weak GRPReviewDetailsViewController *tmpSelf = self;
 	return ^(id inAssemblyView, NSIndexPath *inIndexPath, id inUserData)
 		   {
 			   [inAssemblyView deselectRowAtIndexPath:inIndexPath animated:NO];
-			   id <GRPEditableTableViewCell> tmpCell = (id <GRPEditableTableViewCell>)[inAssemblyView cellForRowAtIndexPath:inIndexPath];
-			   [tmpCell beginEditing];
+			   if (tmpSelf.isEditingReview)
+			   {
+				   id <GRPEditableTableViewCell> tmpCell = (id <GRPEditableTableViewCell>)[inAssemblyView cellForRowAtIndexPath:inIndexPath];
+				   [tmpCell beginEditing];
+			   }
 		   };
 }
 
@@ -218,6 +213,7 @@ static NSString *const GRPEditableRatingTableViewCellIdentifier = @"GRPEditableR
 												  {
 													  [tmpSelf setReviewValue:@(inRating) forKeyPath:@"rating"];
 												  };
+												  [tmpCell.ratingView setEditable:tmpSelf.isEditingReview];
 											  }
 																								  didSelectBlock:nil];
 	return rtnCellModel;
@@ -269,11 +265,6 @@ static NSString *const GRPEditableRatingTableViewCellIdentifier = @"GRPEditableR
 }
 
 #pragma mark - Data updates -
-- (void)beginEditing
-{
-	self.isEditingReview = YES;
-}
-
 - (void)setReviewValue:(id)inValue forKeyPath:(NSString *)inKeyPath
 {
 	[self.review setValue:inValue forKeyPath:inKeyPath];
@@ -303,6 +294,21 @@ static NSString *const GRPEditableRatingTableViewCellIdentifier = @"GRPEditableR
 }
 
 #pragma mark - Navigation actions -
+- (void)beginEditing
+{
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"End Editing" style:UIBarButtonItemStylePlain target:self action:@selector(endEditing)];
+	self.isEditingReview = YES;
+	[self.tableView reloadData];
+}
+
+- (void)endEditing
+{
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(beginEditing)];
+	self.isEditingReview = NO;
+	self.review.lastModified = [NSDate date];
+	[self configureTableViewDelegate];
+}
+
 - (void)close
 {
 	if (self.isCreatingReview)
