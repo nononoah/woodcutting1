@@ -20,6 +20,7 @@ static CGFloat const GRPGrapeViewHeight = 15.0f;
 {
 	[super awakeFromNib];
 	[self drawRatings];
+	[self setEditable:self.editable];
 }
 
 - (void)drawRatings
@@ -74,9 +75,31 @@ static CGFloat const GRPGrapeViewHeight = 15.0f;
 	_editable = editable;
 	if (editable)
 	{
+		int i = 1;
 		for (UIView *tmpView in self.grapeViewArray)
 		{
+			for (UITapGestureRecognizer *tmpGestureRecognizer in tmpView.gestureRecognizers)
+			{
+				[tmpView removeGestureRecognizer:tmpGestureRecognizer];
+			}
+			UITapGestureRecognizer *tmpTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(grapeViewTapped:)];
+			tmpView.tag	= i;
+			[tmpView addGestureRecognizer:tmpTapGestureRecognizer];
 			
+			i++;
+		}
+	}
+}
+
+- (void)grapeViewTapped:(UITapGestureRecognizer *)inTapGestureRecognizer
+{
+	if (self.editable)
+	{
+		NSInteger tmpRating = inTapGestureRecognizer.view.tag;
+		[self setRating:tmpRating];
+		if (self.ratingDidChangeBlock)
+		{
+			self.ratingDidChangeBlock(tmpRating);
 		}
 	}
 }

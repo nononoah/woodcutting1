@@ -36,6 +36,12 @@ static NSString *const GRPReviewTableViewCellIdentifier = @"GRPReviewTableViewCe
 	[self configureTableViewController];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.tableViewController updateView];
+}
+
 - (void)configureTableViewController
 {
 	[self.tableViewController setObject:[GRPUserHandler currentUser] withKeyPath:@"reviews"];
@@ -43,7 +49,7 @@ static NSString *const GRPReviewTableViewCellIdentifier = @"GRPReviewTableViewCe
 	self.tableViewController.ascendingSort = NO;
 	self.tableViewController.autoResize = YES;
 	self.tableViewController.viewModelBuilder = [self reviewListViewModelBuilder];
-	[self.tableViewController setNeedsUpdateFetchRequest];
+	[self.tableViewController updateView];
 }
 
 - (FZViewModelBuilder *)reviewListViewModelBuilder

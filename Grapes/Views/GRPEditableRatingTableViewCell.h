@@ -8,9 +8,12 @@
 
 #import "GRPTableViewCell.h"
 
+#import "GRPEditableTableViewCell.h"
+
 #import "GRPRatingView.h"
 
 @interface GRPEditableRatingTableViewCell : GRPTableViewCell
 @property (weak, nonatomic) IBOutlet GRPRatingView *ratingView;
 @property (nonatomic, copy) void (^ratingDidChangeBlock)(NSInteger inRating);
+- (void)updateRatingLabelForRating:(NSInteger)inRating;
 @end

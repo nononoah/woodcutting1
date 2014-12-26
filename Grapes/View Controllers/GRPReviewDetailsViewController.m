@@ -10,6 +10,7 @@
 
 #import "GRPAdjustableTextFieldTableViewCell.h"
 #import "GRPReviewTextViewTableViewCell.h"
+#import "GRPEditableRatingTableViewCell.h"
 #import "GRPTableView.h"
 
 #import "FZTableViewDelegate.h"
@@ -22,6 +23,7 @@
 
 static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdjustableTextFieldTableViewCell";
 static NSString *const GRPReviewTextViewTableViewCellIdentifier = @"GRPReviewTextViewTableViewCell";
+static NSString *const GRPEditableRatingTableViewCellIdentifier = @"GRPEditableRatingTableViewCell";
 
 @interface GRPReviewDetailsViewController ()
 @property (nonatomic, assign) BOOL isCreatingReview;
@@ -49,7 +51,7 @@ static NSString *const GRPReviewTextViewTableViewCellIdentifier = @"GRPReviewTex
 		self.isCreatingReview = YES;
 		self.review = [self stagingReview];
 		self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(close)];
-		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(close)];
+		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
 	}
 	[self prepareKeyboard];
 	[self configureTableViewDelgate];
@@ -90,6 +92,9 @@ static NSString *const GRPReviewTextViewTableViewCellIdentifier = @"GRPReviewTex
 	[tmpCellModelArray addObject:tmpCellModel];
 	[tmpEditableIndexPathArray addObject:[NSIndexPath indexPathForRow:(tmpCellModelArray.count - 1) inSection:0]];
 	
+	// Rating
+	[tmpCellModelArray addObject:[self ratingViewCellModel]];
+	
 	// Wine origin
 	tmpCellModel = [self adjustableTextFieldModelWithText:tmpSelf.review.wine.countryOfOrigin placeholder:@"Enter the wine's origin" textFieldDidChangeBlock: ^(NSString *inTextFieldText){[tmpSelf setReviewValue:inTextFieldText forKeyPath:@"wine.countryOfOrigin"];}];
 	[tmpCellModelArray addObject:tmpCellModel];
@@ -100,7 +105,7 @@ static NSString *const GRPReviewTextViewTableViewCellIdentifier = @"GRPReviewTex
 	[tmpCellModelArray addObject:tmpCellModel];
 	[tmpEditableIndexPathArray addObject:[NSIndexPath indexPathForRow:(tmpCellModelArray.count - 1) inSection:0]];
 	
-	// Reviewhdh
+	// Review
 	[tmpCellModelArray addObject:[self reviewTextViewCellModel]];
 	[tmpEditableIndexPathArray addObject:[NSIndexPath indexPathForRow:(tmpCellModelArray.count - 1) inSection:0]];
 	
@@ -139,14 +144,15 @@ static NSString *const GRPReviewTextViewTableViewCellIdentifier = @"GRPReviewTex
 												  if (tmpSelf.review.text.length)
 												  {
 													  tmpCell.messagesView.messagesTextView.text = tmpSelf.review.text;
-													  tmpCell.messagesView.messagesTextView.hidden = NO;
 													  tmpCell.messagesView.placeholderLabel.hidden = YES;
+													  tmpCell.messagesView.characterCountLimitLabel.hidden = NO;
+													  tmpCell.messagesView.characterCountLimitLabel.text = [NSString stringWithFormat:@"%i / 200", (int)tmpSelf.review.text.length];
 												  }
 												  else
 												  {
 													  tmpCell.messagesView.messagesTextView.text = nil;
-													  tmpCell.messagesView.messagesTextView.hidden = YES;
 													  tmpCell.messagesView.placeholderLabel.hidden = NO;
+													  tmpCell.messagesView.characterCountLimitLabel.hidden = YES;
 												  }
 												  __weak GRPReviewTextViewTableViewCell *blkCell = tmpCell;
 												  tmpCell.messagesViewMediator.shouldBeginEditingBlock =
@@ -155,6 +161,13 @@ static NSString *const GRPReviewTextViewTableViewCellIdentifier = @"GRPReviewTex
 													  [tmpSelf.keyboardMediator setCurrentlyEditingTableViewCell:blkCell];
 													  return YES;
 												  };
+												  tmpCell.messagesViewMediator.shouldReturnBlock =
+												  ^BOOL (UITextView *inTextView)
+												  {
+													  [inTextView resignFirstResponder];
+													  return NO;
+												  };
+												  
 												  tmpCell.messagesViewMediator.textViewDidChangeBlock =
 												  ^(NSString *inTextViewText)
 												  {
@@ -164,7 +177,7 @@ static NSString *const GRPReviewTextViewTableViewCellIdentifier = @"GRPReviewTex
 												  tmpCell.messagesViewMediator.textViewHeightDidChangeBlock =
 												  ^(UITextView *inTextView, CGFloat inHeight)
 												  {
-													  [tmpSelf.tableView scrollToRowAtIndexPath:inIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+													  [tmpSelf.tableView scrollToRowAtIndexPath:inIndexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
 													  [tmpSelf.tableViewDelegate resizeTableViewCellAtIndexPath:inIndexPath];
 												  };
 												  
@@ -183,10 +196,38 @@ static NSString *const GRPReviewTextViewTableViewCellIdentifier = @"GRPReviewTex
 		   };
 }
 
+- (FZTableViewCellViewModel *)ratingViewCellModel
+{
+	__weak GRPReviewDetailsViewController *tmpSelf = self;
+	FZTableViewCellViewModel *rtnCellModel = [FZTableViewCellViewModel tableViewCellViewModelWithReuseIdentifier:GRPEditableRatingTableViewCellIdentifier
+																								  configureBlock:
+											  ^(id inAssemblyView, id inCell, NSIndexPath *inIndexPath, id inUserData)
+											  {
+												  GRPEditableRatingTableViewCell *tmpCell = (GRPEditableRatingTableViewCell *)inCell;
+												  if (tmpSelf.review.rating.integerValue == -1)
+												  {
+													  [tmpCell.ratingView setRating:0];
+												  }
+												  else
+												  {
+													  [tmpCell.ratingView setRating:tmpSelf.review.rating.integerValue];
+												  }
+												  [tmpCell updateRatingLabelForRating:tmpSelf.review.rating.integerValue];
+												  tmpCell.ratingDidChangeBlock =
+												  ^(NSInteger inRating)
+												  {
+													  [tmpSelf setReviewValue:@(inRating) forKeyPath:@"rating"];
+												  };
+											  }
+																								  didSelectBlock:nil];
+	return rtnCellModel;
+}
+
 #pragma mark - Staging data creation and conversion -
 - (GRPReview *)stagingReview
 {
 	GRPReview *rtnReview = (GRPReview *)[[FZCDSManager sharedManager] uniqueObjectForEntity:@"Review" identifier:@"staging"];
+	rtnReview.rating = @(-1);
 	rtnReview.wine = (GRPWine *)[[FZCDSManager sharedManager] uniqueObjectForEntity:@"Wine" identifier:@"staging"];
 	
 	[[FZCDSManager sharedManager] save];
@@ -200,6 +241,7 @@ static NSString *const GRPReviewTextViewTableViewCellIdentifier = @"GRPReviewTex
 	self.review.wine.countryOfOrigin = nil;
 	self.review.wine.type = nil;
 	self.review.text = nil;
+	self.review.rating = @(-1);
 }
 
 - (void)convertReview
@@ -207,6 +249,8 @@ static NSString *const GRPReviewTextViewTableViewCellIdentifier = @"GRPReviewTex
 	GRPReview *tmpReview = [self copyObject:self.review ignoringKeyPath:@"reviewID" withUniqueIdentifier:[NSString stringWithFormat:@"%i", (int)[GRPDataSifter allReviews].count + 1]];
 	tmpReview.wine = [self copyObject:self.review.wine ignoringKeyPath:@"wineID" withUniqueIdentifier:[NSString stringWithFormat:@"%i", (int)[GRPDataSifter allWines].count + 1]];
 	tmpReview.user = [GRPUserHandler currentUser];
+	tmpReview.created = [NSDate date];
+	tmpReview.lastModified = [NSDate date];
 	[[FZCDSManager sharedManager] save];
 }
 
@@ -230,7 +274,7 @@ static NSString *const GRPReviewTextViewTableViewCellIdentifier = @"GRPReviewTex
 	self.isEditingReview = YES;
 }
 
-- (void)setReviewValue:(NSString *)inValue forKeyPath:(NSString *)inKeyPath
+- (void)setReviewValue:(id)inValue forKeyPath:(NSString *)inKeyPath
 {
 	[self.review setValue:inValue forKeyPath:inKeyPath];
 	[[FZCDSManager sharedManager] save];
@@ -245,13 +289,17 @@ static NSString *const GRPReviewTextViewTableViewCellIdentifier = @"GRPReviewTex
 	{
 		tmpFormIsValid = NO;
 	}
+	if (self.review.rating.integerValue == -1)
+	{
+		tmpFormIsValid = NO;
+	}
 	
 	[self enableFormSubmission:tmpFormIsValid];
 }
 
 - (void)enableFormSubmission:(BOOL)inEnableFormSubmission
 {
-	
+	self.navigationItem.rightBarButtonItem.enabled = inEnableFormSubmission;
 }
 
 #pragma mark - Navigation actions -
@@ -259,11 +307,20 @@ static NSString *const GRPReviewTextViewTableViewCellIdentifier = @"GRPReviewTex
 {
 	if (self.isCreatingReview)
 	{
-			[self dismissViewControllerAnimated:YES completion:nil];
+		[self dismissViewControllerAnimated:YES completion:nil];
 	}
 	else
 	{
 		[self.navigationController popViewControllerAnimated:YES];
+	}
+}
+
+- (void)save
+{
+	if (self.isCreatingReview)
+	{
+		[self convertReview];
+		[self close];
 	}
 }
 
