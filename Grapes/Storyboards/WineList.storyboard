@@ -50,6 +50,99 @@
                                             <outlet property="adjustableTextField" destination="0lO-mA-ark" id="xRJ-Ct-Wqx"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GRPReviewTextViewTableViewCell" rowHeight="52" id="vTx-bG-6eP" userLabel="GRPReviewTextViewTableViewCell" customClass="GRPReviewTextViewTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vTx-bG-6eP" id="iXf-tr-Mqv">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34U-O2-IUl" userLabel="messagesView" customClass="GRPMessagesView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+                                                    <subviews>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fn-hy-E3K" userLabel="messagesTextView">
+                                                            <rect key="frame" x="10" y="10" width="300" height="21"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" priority="999" constant="31" id="PNx-lP-Ogv"/>
+                                                            </constraints>
+                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0f7-cY-1lI" userLabel="placeholderLabel">
+                                                            <rect key="frame" x="10" y="10" width="300" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6i-Vc-lzD" userLabel="characterCountLabel">
+                                                            <rect key="frame" x="268" y="33" width="42" height="13"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="0f7-cY-1lI" firstAttribute="trailing" secondItem="2Fn-hy-E3K" secondAttribute="trailing" id="BcK-5Q-u3a"/>
+                                                        <constraint firstItem="2Fn-hy-E3K" firstAttribute="top" secondItem="34U-O2-IUl" secondAttribute="top" constant="10" id="Gqy-3m-KnI"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2Fn-hy-E3K" secondAttribute="bottom" constant="20" id="ONZ-Im-Tmb"/>
+                                                        <constraint firstItem="0f7-cY-1lI" firstAttribute="leading" secondItem="2Fn-hy-E3K" secondAttribute="leading" id="WSi-aC-AUm"/>
+                                                        <constraint firstItem="M6i-Vc-lzD" firstAttribute="trailing" secondItem="2Fn-hy-E3K" secondAttribute="trailing" id="aY6-2F-gec"/>
+                                                        <constraint firstAttribute="bottom" secondItem="M6i-Vc-lzD" secondAttribute="bottom" constant="5" id="g7P-jM-b2F"/>
+                                                        <constraint firstItem="2Fn-hy-E3K" firstAttribute="leading" secondItem="34U-O2-IUl" secondAttribute="leading" constant="10" id="hZK-Qv-BCV"/>
+                                                        <constraint firstItem="0f7-cY-1lI" firstAttribute="centerY" secondItem="2Fn-hy-E3K" secondAttribute="centerY" id="jcF-6Z-j7o"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2Fn-hy-E3K" secondAttribute="trailing" constant="10" id="kZM-O4-JN7"/>
+                                                        <constraint firstItem="M6i-Vc-lzD" firstAttribute="top" secondItem="2Fn-hy-E3K" secondAttribute="bottom" constant="2" id="sNO-tc-wiT"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="characterCountLimitLabel" destination="M6i-Vc-lzD" id="mpQ-Ap-n5f"/>
+                                                        <outlet property="messagesTextView" destination="2Fn-hy-E3K" id="OFM-Nz-73b"/>
+                                                        <outlet property="messagesTextViewHeightConstraint" destination="PNx-lP-Ogv" id="MZ4-Mc-01Y"/>
+                                                        <outlet property="placeholderLabel" destination="0f7-cY-1lI" id="pRg-uJ-YnX"/>
+                                                    </connections>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="34U-O2-IUl" secondAttribute="bottom" id="H6C-cO-dII"/>
+                                                <constraint firstItem="34U-O2-IUl" firstAttribute="top" secondItem="iXf-tr-Mqv" secondAttribute="top" id="KgJ-KO-EQG"/>
+                                                <constraint firstItem="34U-O2-IUl" firstAttribute="leading" secondItem="iXf-tr-Mqv" secondAttribute="leading" id="OgR-ag-nVU"/>
+                                                <constraint firstAttribute="trailing" secondItem="34U-O2-IUl" secondAttribute="trailing" id="veo-Ph-7jA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messagesView" destination="34U-O2-IUl" id="1Yu-xj-APE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="y0M-4H-rLe" customClass="GRPEditableRatingTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y0M-4H-rLe" id="pjS-um-pGx">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJg-dW-WSe" userLabel="ratingView" customClass="GRPRatingView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ty9-Vz-gLz" userLabel="ratingDescriptionLabel">
+                                                    <rect key="frame" x="139" y="30" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="jJg-dW-WSe" secondAttribute="trailing" id="PHL-9H-W1q"/>
+                                                <constraint firstAttribute="bottom" secondItem="jJg-dW-WSe" secondAttribute="bottom" id="amt-rO-1UU"/>
+                                                <constraint firstItem="jJg-dW-WSe" firstAttribute="leading" secondItem="pjS-um-pGx" secondAttribute="leading" id="oLX-Uu-cFZ"/>
+                                                <constraint firstItem="jJg-dW-WSe" firstAttribute="top" secondItem="pjS-um-pGx" secondAttribute="top" id="uBo-R6-l1J"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ratingDescriptionLabel" destination="Ty9-Vz-gLz" id="b8Q-AF-cdi"/>
+                                            <outlet property="ratingView" destination="jJg-dW-WSe" id="gKa-BZ-36z"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="hsp-Ri-VbQ" id="kGM-nO-yV5"/>

@@ -10,6 +10,8 @@
 
 #import "FZKeyboardAppearanceEventResponder.h"
 
+static const CGFloat GRPKeyboardAttachmentViewHeight = 44.0f;
+
 @interface GRPKeyboardMediator()
 @property (nonatomic, strong) FZKeyboardAppearanceEventResponder *keyboardAppearanceEventResponder;
 @property (nonatomic, strong) GRPKeyboardAttachmentView *keyboardAttachmentView;
@@ -25,8 +27,8 @@
 	rtnMediator.mediatedViewController = inViewController;
 	
 	// Control toolbar
-	rtnMediator.keyboardAttachmentView = [GRPKeyboardAttachmentView keyboardAttachmentViewForFrame:CGRectMake(0, 0, CGRectGetWidth(inViewController.tableView.frame), 44.0f) responder:rtnMediator];
-	rtnMediator.keyboardAttachmentView.frame = CGRectMake(0, CGRectGetMaxY(rtnMediator.mediatedViewController.view.bounds), CGRectGetWidth(rtnMediator.mediatedViewController.view.frame), 44);
+	rtnMediator.keyboardAttachmentView = [GRPKeyboardAttachmentView keyboardAttachmentViewForFrame:CGRectMake(0, 0, CGRectGetWidth(inViewController.tableView.frame), GRPKeyboardAttachmentViewHeight) responder:rtnMediator];
+	rtnMediator.keyboardAttachmentView.frame = CGRectMake(0, CGRectGetMaxY(rtnMediator.mediatedViewController.view.bounds), CGRectGetWidth(rtnMediator.mediatedViewController.view.frame), GRPKeyboardAttachmentViewHeight);
 	[rtnMediator.mediatedViewController.view addSubview:rtnMediator.keyboardAttachmentView];
 	
 	// Keyboard appearance
@@ -35,19 +37,17 @@
 	[rtnMediator.keyboardAppearanceEventResponder registerAppearanceBlock:
 	^(CGRect inKeyboardFrame)
 	{
-		tmpMediator.keyboardAttachmentView.frame = CGRectMake(0, CGRectGetMaxY(tmpMediator.mediatedViewController.view.bounds) - CGRectGetHeight(inKeyboardFrame) - 44.0f, CGRectGetWidth(tmpMediator.mediatedViewController.view.frame), 44.0f);
+		tmpMediator.keyboardAttachmentView.frame = CGRectMake(0, CGRectGetMaxY(tmpMediator.mediatedViewController.view.bounds) - CGRectGetHeight(inKeyboardFrame) - GRPKeyboardAttachmentViewHeight, CGRectGetWidth(tmpMediator.mediatedViewController.view.frame), GRPKeyboardAttachmentViewHeight);
 		[tmpMediator.keyboardAttachmentView.superview bringSubviewToFront:tmpMediator.keyboardAttachmentView];
-		[tmpMediator.mediatedViewController.tableView setContentInset:UIEdgeInsetsMake(0, 0, CGRectGetHeight(inKeyboardFrame), 0)];
+		[tmpMediator.mediatedViewController.tableView setContentInset:UIEdgeInsetsMake(0, 0, CGRectGetHeight(inKeyboardFrame) + GRPKeyboardAttachmentViewHeight, 0)];
 	}
 													   disappearanceBlock:
 	^(CGRect inKeyboardFrame)
 	{
-		tmpMediator.keyboardAttachmentView.frame = CGRectMake(0, CGRectGetMaxY(tmpMediator.mediatedViewController.view.bounds), CGRectGetWidth(tmpMediator.mediatedViewController.view.frame), 44);
+		tmpMediator.keyboardAttachmentView.frame = CGRectMake(0, CGRectGetMaxY(tmpMediator.mediatedViewController.view.bounds), CGRectGetWidth(tmpMediator.mediatedViewController.view.frame), GRPKeyboardAttachmentViewHeight);
 		[tmpMediator.mediatedViewController.tableView setContentInset:UIEdgeInsetsZero];
 	}];
 	[rtnMediator.keyboardAppearanceEventResponder beginObserving];
-	
-
 	
 	return rtnMediator;
 }

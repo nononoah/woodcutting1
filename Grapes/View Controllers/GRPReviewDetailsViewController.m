@@ -9,6 +9,7 @@
 #import "GRPReviewDetailsViewController.h"
 
 #import "GRPAdjustableTextFieldTableViewCell.h"
+#import "GRPReviewTextViewTableViewCell.h"
 #import "GRPTableView.h"
 
 #import "FZTableViewDelegate.h"
@@ -20,7 +21,7 @@
 #import "GRPWine+GRP.h"
 
 static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdjustableTextFieldTableViewCell";
-
+static NSString *const GRPReviewTextViewTableViewCellIdentifier = @"GRPReviewTextViewTableViewCell";
 
 @interface GRPReviewDetailsViewController ()
 @property (nonatomic, assign) BOOL isCreatingReview;
@@ -78,6 +79,8 @@ static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdju
 #pragma mark - TableView configuration -
 - (void)configureTableViewDelgate
 {
+	self.tableViewDelegate.autoResize = YES;
+	
 	__weak GRPReviewDetailsViewController *tmpSelf = self;
 	NSMutableArray *tmpCellModelArray = [NSMutableArray new];
 	NSMutableArray *tmpEditableIndexPathArray = [NSMutableArray new];
@@ -97,10 +100,15 @@ static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdju
 	[tmpCellModelArray addObject:tmpCellModel];
 	[tmpEditableIndexPathArray addObject:[NSIndexPath indexPathForRow:(tmpCellModelArray.count - 1) inSection:0]];
 	
+	// Reviewhdh
+	[tmpCellModelArray addObject:[self reviewTextViewCellModel]];
+	[tmpEditableIndexPathArray addObject:[NSIndexPath indexPathForRow:(tmpCellModelArray.count - 1) inSection:0]];
+	
 	[self.tableViewDelegate setSectionModelArray:@[[FZTableViewSectionModel sectionModelWithRowModels:tmpCellModelArray]]];
 	self.editableIndexPathArray = [NSArray arrayWithArray:tmpEditableIndexPathArray];
 }
 
+#pragma mark - Cell model building -
 - (FZTableViewCellViewModel *)adjustableTextFieldModelWithText:(NSString *)inText placeholder:(NSString *)inPlaceholder textFieldDidChangeBlock:(void (^)(NSString *))inTextFieldDidChangeBlock
 {
 	__weak GRPReviewDetailsViewController *tmpSelf = self;
@@ -116,14 +124,63 @@ static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdju
 												  __weak GRPAdjustableTextFieldTableViewCell *blkCell = tmpCell;
 												  tmpCell.textFieldDidBeginEditingBlock = ^{[tmpSelf.keyboardMediator setCurrentlyEditingTableViewCell:blkCell];};
 											  }
-																								  didSelectBlock:
-											  ^(id inAssemblyView, NSIndexPath *inIndexPath, id inUserData)
-											  {
-												  [inAssemblyView deselectRowAtIndexPath:inIndexPath animated:NO];
-												  GRPAdjustableTextFieldTableViewCell *tmpCell = (GRPAdjustableTextFieldTableViewCell *)[inAssemblyView cellForRowAtIndexPath:inIndexPath];
-												  [tmpCell.adjustableTextField becomeFirstResponder];
-											  }];
+																								  didSelectBlock:[self didSelectBlockForEditableCell]];
 	return rtnCellModel;
+}
+
+- (FZTableViewCellViewModel *)reviewTextViewCellModel
+{
+	__weak GRPReviewDetailsViewController *tmpSelf = self;
+	FZTableViewCellViewModel *rtnCellModel = [FZTableViewCellViewModel tableViewCellViewModelWithReuseIdentifier:GRPReviewTextViewTableViewCellIdentifier
+																								  configureBlock:
+											  ^(id inAssemblyView, id inCell, NSIndexPath *inIndexPath, id inUserData)
+											  {
+												  GRPReviewTextViewTableViewCell *tmpCell = (GRPReviewTextViewTableViewCell *)inCell;
+												  if (tmpSelf.review.text.length)
+												  {
+													  tmpCell.messagesView.messagesTextView.text = tmpSelf.review.text;
+													  tmpCell.messagesView.messagesTextView.hidden = NO;
+													  tmpCell.messagesView.placeholderLabel.hidden = YES;
+												  }
+												  else
+												  {
+													  tmpCell.messagesView.messagesTextView.text = nil;
+													  tmpCell.messagesView.messagesTextView.hidden = YES;
+													  tmpCell.messagesView.placeholderLabel.hidden = NO;
+												  }
+												  __weak GRPReviewTextViewTableViewCell *blkCell = tmpCell;
+												  tmpCell.messagesViewMediator.shouldBeginEditingBlock =
+												  ^BOOL (UITextView *inTextView)
+												  {
+													  [tmpSelf.keyboardMediator setCurrentlyEditingTableViewCell:blkCell];
+													  return YES;
+												  };
+												  tmpCell.messagesViewMediator.textViewDidChangeBlock =
+												  ^(NSString *inTextViewText)
+												  {
+													  [tmpSelf setReviewValue:inTextViewText forKeyPath:@"text"];
+												  };
+												  
+												  tmpCell.messagesViewMediator.textViewHeightDidChangeBlock =
+												  ^(UITextView *inTextView, CGFloat inHeight)
+												  {
+													  [tmpSelf.tableView scrollToRowAtIndexPath:inIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+													  [tmpSelf.tableViewDelegate resizeTableViewCellAtIndexPath:inIndexPath];
+												  };
+												  
+											  }
+																								  didSelectBlock:[self didSelectBlockForEditableCell]];
+	return rtnCellModel;
+}
+
+- (FZCellViewModelDidSelectBlock)didSelectBlockForEditableCell
+{
+	return ^(id inAssemblyView, NSIndexPath *inIndexPath, id inUserData)
+		   {
+			   [inAssemblyView deselectRowAtIndexPath:inIndexPath animated:NO];
+			   id <GRPEditableTableViewCell> tmpCell = (id <GRPEditableTableViewCell>)[inAssemblyView cellForRowAtIndexPath:inIndexPath];
+			   [tmpCell beginEditing];
+		   };
 }
 
 #pragma mark - Staging data creation and conversion -
@@ -142,6 +199,7 @@ static NSString *const GRPAdjustableTextFieldTableViewCellIdentifier = @"GRPAdju
 	self.review.wine.name = nil;
 	self.review.wine.countryOfOrigin = nil;
 	self.review.wine.type = nil;
+	self.review.text = nil;
 }
 
 - (void)convertReview

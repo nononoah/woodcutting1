@@ -84,6 +84,9 @@
 		1DFC7AA81A4E045700646F1A /* FZMessagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7AA41A4E045700646F1A /* FZMessagesView.m */; };
 		1DFC7AA91A4E045700646F1A /* FZMessagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DFC7AA51A4E045700646F1A /* FZMessagesView.xib */; };
 		1DFC7AAA1A4E045700646F1A /* FZMessagesViewMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7AA71A4E045700646F1A /* FZMessagesViewMediator.m */; };
+		1DFC7AAD1A4E05F200646F1A /* GRPReviewTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7AAC1A4E05F200646F1A /* GRPReviewTextViewTableViewCell.m */; };
+		1DFC7AB01A4E0BEF00646F1A /* GRPMessagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7AAF1A4E0BEF00646F1A /* GRPMessagesView.m */; };
+		1DFC7AB31A4E111200646F1A /* GRPEditableRatingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7AB21A4E111200646F1A /* GRPEditableRatingTableViewCell.m */; };
 		36B9678AF9CE028350BF237E /* libPods-Grapes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8F471BE6B6D8045422EAA1 /* libPods-Grapes.a */; };
 		4FFA90E0186782D4003E2791 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFA90DF186782D4003E2791 /* Foundation.framework */; };
 		4FFA90E2186782D4003E2791 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFA90E1186782D4003E2791 /* CoreGraphics.framework */; };
@@ -285,6 +288,12 @@
 		1DFC7AA51A4E045700646F1A /* FZMessagesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FZMessagesView.xib; sourceTree = "<group>"; };
 		1DFC7AA61A4E045700646F1A /* FZMessagesViewMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZMessagesViewMediator.h; sourceTree = "<group>"; };
 		1DFC7AA71A4E045700646F1A /* FZMessagesViewMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZMessagesViewMediator.m; sourceTree = "<group>"; };
+		1DFC7AAB1A4E05F200646F1A /* GRPReviewTextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPReviewTextViewTableViewCell.h; sourceTree = "<group>"; };
+		1DFC7AAC1A4E05F200646F1A /* GRPReviewTextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPReviewTextViewTableViewCell.m; sourceTree = "<group>"; };
+		1DFC7AAE1A4E0BEF00646F1A /* GRPMessagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPMessagesView.h; sourceTree = "<group>"; };
+		1DFC7AAF1A4E0BEF00646F1A /* GRPMessagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPMessagesView.m; sourceTree = "<group>"; };
+		1DFC7AB11A4E111200646F1A /* GRPEditableRatingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPEditableRatingTableViewCell.h; sourceTree = "<group>"; };
+		1DFC7AB21A4E111200646F1A /* GRPEditableRatingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPEditableRatingTableViewCell.m; sourceTree = "<group>"; };
 		4FFA90DC186782D4003E2791 /* Grapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFA90DF186782D4003E2791 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FFA90E1186782D4003E2791 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -595,6 +604,12 @@
 			children = (
 				1DFC7A8E1A4DE5CC00646F1A /* GRPAdjustableTextFieldTableViewCell.h */,
 				1DFC7A8F1A4DE5CC00646F1A /* GRPAdjustableTextFieldTableViewCell.m */,
+				1DFC7AAB1A4E05F200646F1A /* GRPReviewTextViewTableViewCell.h */,
+				1DFC7AAC1A4E05F200646F1A /* GRPReviewTextViewTableViewCell.m */,
+				1DFC7AAE1A4E0BEF00646F1A /* GRPMessagesView.h */,
+				1DFC7AAF1A4E0BEF00646F1A /* GRPMessagesView.m */,
+				1DFC7AB11A4E111200646F1A /* GRPEditableRatingTableViewCell.h */,
+				1DFC7AB21A4E111200646F1A /* GRPEditableRatingTableViewCell.m */,
 			);
 			name = "Review Details";
 			sourceTree = "<group>";
@@ -977,6 +992,7 @@
 				1D5FEFC31A4DCB47002213A6 /* FZCDSPagingTableViewController.m in Sources */,
 				4FFA913718678F2B003E2791 /* GRPAppearanceHandler.m in Sources */,
 				1D5FF0091A4DCD55002213A6 /* GRPUserHandler.m in Sources */,
+				1DFC7AAD1A4E05F200646F1A /* GRPReviewTextViewTableViewCell.m in Sources */,
 				1D5FEFF91A4DCB6E002213A6 /* FZViewModelBuilderGroupedByKeyPathEchoing.m in Sources */,
 				1D5FEFBF1A4DCB47002213A6 /* FZCDSFetchArrayController.m in Sources */,
 				4FFA912818678640003E2791 /* GRPReviewListViewController.m in Sources */,
@@ -1037,6 +1053,7 @@
 				1D5FEFC21A4DCB47002213A6 /* FZCDSListener.m in Sources */,
 				1D5FEFC81A4DCB47002213A6 /* FZCDSLogOperation.m in Sources */,
 				1D5FEFAB1A4DCB47002213A6 /* FZCDSActionRemoveAllCookies.m in Sources */,
+				1DFC7AB31A4E111200646F1A /* GRPEditableRatingTableViewCell.m in Sources */,
 				1D5FEFFE1A4DCB6E002213A6 /* FZTableViewCellViewModel.m in Sources */,
 				1D5FEFAD1A4DCB47002213A6 /* FZCDSActionRemoveCookie.m in Sources */,
 				1D5FEFCD1A4DCB47002213A6 /* FZCDSTestSupport.m in Sources */,
@@ -1044,6 +1061,7 @@
 				1DFC7A9B1A4DEF2000646F1A /* FZKeyboardAppearanceEventResponder.m in Sources */,
 				1D5FEFAF1A4DCB47002213A6 /* FZCDSActionSetProperty.m in Sources */,
 				1D5FEFC51A4DCB47002213A6 /* FZCDSLog.m in Sources */,
+				1DFC7AB01A4E0BEF00646F1A /* GRPMessagesView.m in Sources */,
 				1D5FEFA81A4DCB47002213A6 /* FZCDSActionAddGlobalVariable.m in Sources */,
 				1D5FEFBA1A4DCB47002213A6 /* FZCDSManager+ObjectOperation.m in Sources */,
 				1D5FEFB31A4DCB47002213A6 /* NSEntityDescription+FZCDS.m in Sources */,

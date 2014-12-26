@@ -11,5 +11,7 @@
 @interface GRPRatingView : UIView
 
 - (void)setRating:(NSInteger)inRating;
+@property (nonatomic, assign) BOOL editable;
+@property (nonatomic, copy) void (^ratingDidChangeBlock)(NSInteger inRating);
 
 @end

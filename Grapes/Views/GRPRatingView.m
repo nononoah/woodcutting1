@@ -49,6 +49,7 @@ static CGFloat const GRPGrapeViewHeight = 15.0f;
 	self.grapeViewArray = [NSArray arrayWithArray:tmpGrapeViewArray];
 }
 
+#pragma mark - External setter -
 - (void)setRating:(NSInteger)inRating
 {
 	for (int i = 0; i < 10; i++)
@@ -66,5 +67,19 @@ static CGFloat const GRPGrapeViewHeight = 15.0f;
 		tmpGrapeView.layer.borderColor = [UIColor cyanColor].CGColor;
 	}
 }
+
+#pragma mark - Editing response -
+- (void)setEditable:(BOOL)editable
+{
+	_editable = editable;
+	if (editable)
+	{
+		for (UIView *tmpView in self.grapeViewArray)
+		{
+			
+		}
+	}
+}
+
 
 @end
