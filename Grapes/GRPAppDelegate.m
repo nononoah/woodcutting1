@@ -17,7 +17,7 @@
 {
 	[FZCDSManager sharedManager].modelName = @"Grapes";
 	[GRPDataGenerator generateDefaultData];
-	
+	[UIApplication sharedApplication].statusBarHidden = YES;
     return YES;
 }
 							

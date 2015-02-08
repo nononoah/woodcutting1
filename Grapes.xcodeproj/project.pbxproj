@@ -72,6 +72,15 @@
 		1D5FF0061A4DCC93002213A6 /* NSError+FZCDS.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF0051A4DCC93002213A6 /* NSError+FZCDS.m */; };
 		1D5FF0091A4DCD55002213A6 /* GRPUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF0081A4DCD55002213A6 /* GRPUserHandler.m */; };
 		1D5FF00C1A4DD487002213A6 /* GRPWine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FF00B1A4DD487002213A6 /* GRPWine.m */; };
+		1D9575231A87EDEA00C8FBFE /* GRPWalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9575221A87EDEA00C8FBFE /* GRPWalkthroughViewController.m */; };
+		1D9575261A87EE4700C8FBFE /* GRPCarouselCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9575251A87EE4700C8FBFE /* GRPCarouselCollectionViewDelegate.m */; };
+		1D95752A1A87EF5700C8FBFE /* GRPWalkthroughCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9575291A87EF5700C8FBFE /* GRPWalkthroughCollectionViewCell.m */; };
+		1D95752D1A87F40200C8FBFE /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D95752C1A87F40200C8FBFE /* placeholder.png */; };
+		1D9575471A87FDD900C8FBFE /* 1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 1D9575421A87FDD900C8FBFE /* 1.JPG */; };
+		1D9575481A87FDD900C8FBFE /* 2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 1D9575431A87FDD900C8FBFE /* 2.JPG */; };
+		1D9575491A87FDD900C8FBFE /* 3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 1D9575441A87FDD900C8FBFE /* 3.JPG */; };
+		1D95754A1A87FDD900C8FBFE /* 4.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 1D9575451A87FDD900C8FBFE /* 4.JPG */; };
+		1D95754B1A87FDD900C8FBFE /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D9575461A87FDD900C8FBFE /* 5.jpg */; };
 		1DF5C4B919BCDC820064209C /* GRPReviewDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4B819BCDC820064209C /* GRPReviewDetailsViewController.m */; };
 		1DF5C4BC19BCDEE80064209C /* GRPViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C4BB19BCDEE80064209C /* GRPViewControllerFactory.m */; };
 		1DFC7A8C1A4DE27A00646F1A /* NSDate+GRP.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC7A8B1A4DE27A00646F1A /* NSDate+GRP.m */; };
@@ -264,6 +273,18 @@
 		1D5FF0081A4DCD55002213A6 /* GRPUserHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPUserHandler.m; sourceTree = "<group>"; };
 		1D5FF00A1A4DD487002213A6 /* GRPWine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWine.h; sourceTree = "<group>"; };
 		1D5FF00B1A4DD487002213A6 /* GRPWine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWine.m; sourceTree = "<group>"; };
+		1D9575211A87EDEA00C8FBFE /* GRPWalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWalkthroughViewController.h; sourceTree = "<group>"; };
+		1D9575221A87EDEA00C8FBFE /* GRPWalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWalkthroughViewController.m; sourceTree = "<group>"; };
+		1D9575241A87EE4700C8FBFE /* GRPCarouselCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPCarouselCollectionViewDelegate.h; sourceTree = "<group>"; };
+		1D9575251A87EE4700C8FBFE /* GRPCarouselCollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPCarouselCollectionViewDelegate.m; sourceTree = "<group>"; };
+		1D9575281A87EF5700C8FBFE /* GRPWalkthroughCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPWalkthroughCollectionViewCell.h; sourceTree = "<group>"; };
+		1D9575291A87EF5700C8FBFE /* GRPWalkthroughCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPWalkthroughCollectionViewCell.m; sourceTree = "<group>"; };
+		1D95752C1A87F40200C8FBFE /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		1D9575421A87FDD900C8FBFE /* 1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.JPG; sourceTree = "<group>"; };
+		1D9575431A87FDD900C8FBFE /* 2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.JPG; sourceTree = "<group>"; };
+		1D9575441A87FDD900C8FBFE /* 3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.JPG; sourceTree = "<group>"; };
+		1D9575451A87FDD900C8FBFE /* 4.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.JPG; sourceTree = "<group>"; };
+		1D9575461A87FDD900C8FBFE /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
 		1DF5C4B719BCDC820064209C /* GRPReviewDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPReviewDetailsViewController.h; sourceTree = "<group>"; };
 		1DF5C4B819BCDC820064209C /* GRPReviewDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRPReviewDetailsViewController.m; sourceTree = "<group>"; };
 		1DF5C4BA19BCDEE80064209C /* GRPViewControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRPViewControllerFactory.h; sourceTree = "<group>"; };
@@ -599,6 +620,37 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
+		1D9575201A87EDD400C8FBFE /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				1D9575211A87EDEA00C8FBFE /* GRPWalkthroughViewController.h */,
+				1D9575221A87EDEA00C8FBFE /* GRPWalkthroughViewController.m */,
+			);
+			name = Walkthrough;
+			sourceTree = "<group>";
+		};
+		1D9575271A87EF4200C8FBFE /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				1D9575281A87EF5700C8FBFE /* GRPWalkthroughCollectionViewCell.h */,
+				1D9575291A87EF5700C8FBFE /* GRPWalkthroughCollectionViewCell.m */,
+			);
+			name = Walkthrough;
+			sourceTree = "<group>";
+		};
+		1D95752B1A87F40200C8FBFE /* images */ = {
+			isa = PBXGroup;
+			children = (
+				1D95752C1A87F40200C8FBFE /* placeholder.png */,
+				1D9575421A87FDD900C8FBFE /* 1.JPG */,
+				1D9575431A87FDD900C8FBFE /* 2.JPG */,
+				1D9575441A87FDD900C8FBFE /* 3.JPG */,
+				1D9575451A87FDD900C8FBFE /* 4.JPG */,
+				1D9575461A87FDD900C8FBFE /* 5.jpg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		1DFC7A8D1A4DE52A00646F1A /* Review Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,6 +752,7 @@
 		4FFA90E6186782D4003E2791 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1D95752B1A87F40200C8FBFE /* images */,
 				4FFA90E7186782D4003E2791 /* Grapes-Info.plist */,
 				4FFA90E8186782D4003E2791 /* InfoPlist.strings */,
 				4FFA90EB186782D4003E2791 /* main.m */,
@@ -729,6 +782,7 @@
 		4FFA9114186784B5003E2791 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D9575271A87EF4200C8FBFE /* Walkthrough */,
 				4FFA91381867A5AE003E2791 /* Global */,
 				4FFA912018678574003E2791 /* Review List */,
 				1DFC7A8D1A4DE52A00646F1A /* Review Details */,
@@ -739,6 +793,7 @@
 		4FFA9115186784B5003E2791 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1D9575201A87EDD400C8FBFE /* Walkthrough */,
 				4FFA911F18678562003E2791 /* Review List */,
 				4FFA91211867857E003E2791 /* Review Details */,
 			);
@@ -791,6 +846,8 @@
 				1D5FF0081A4DCD55002213A6 /* GRPUserHandler.m */,
 				1DFC7A9C1A4DEF4900646F1A /* GRPKeyboardMediator.h */,
 				1DFC7A9D1A4DEF4900646F1A /* GRPKeyboardMediator.m */,
+				1D9575241A87EE4700C8FBFE /* GRPCarouselCollectionViewDelegate.h */,
+				1D9575251A87EE4700C8FBFE /* GRPCarouselCollectionViewDelegate.m */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -930,9 +987,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FFA911E18678552003E2791 /* WineList.storyboard in Resources */,
+				1D95754B1A87FDD900C8FBFE /* 5.jpg in Resources */,
 				4FFA90F8186782D4003E2791 /* Images.xcassets in Resources */,
 				1DFC7AA91A4E045700646F1A /* FZMessagesView.xib in Resources */,
+				1D95754A1A87FDD900C8FBFE /* 4.JPG in Resources */,
+				1D9575471A87FDD900C8FBFE /* 1.JPG in Resources */,
+				1D95752D1A87F40200C8FBFE /* placeholder.png in Resources */,
+				1D9575481A87FDD900C8FBFE /* 2.JPG in Resources */,
 				4FFA90EA186782D4003E2791 /* InfoPlist.strings in Resources */,
+				1D9575491A87FDD900C8FBFE /* 3.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -991,6 +1054,7 @@
 				1D5FEFC91A4DCB47002213A6 /* FZCDSFetchObjectOperation.m in Sources */,
 				1D5FEFC31A4DCB47002213A6 /* FZCDSPagingTableViewController.m in Sources */,
 				4FFA913718678F2B003E2791 /* GRPAppearanceHandler.m in Sources */,
+				1D95752A1A87EF5700C8FBFE /* GRPWalkthroughCollectionViewCell.m in Sources */,
 				1D5FF0091A4DCD55002213A6 /* GRPUserHandler.m in Sources */,
 				1DFC7AAD1A4E05F200646F1A /* GRPReviewTextViewTableViewCell.m in Sources */,
 				1D5FEFF91A4DCB6E002213A6 /* FZViewModelBuilderGroupedByKeyPathEchoing.m in Sources */,
@@ -1065,11 +1129,13 @@
 				1D5FEFA81A4DCB47002213A6 /* FZCDSActionAddGlobalVariable.m in Sources */,
 				1D5FEFBA1A4DCB47002213A6 /* FZCDSManager+ObjectOperation.m in Sources */,
 				1D5FEFB31A4DCB47002213A6 /* NSEntityDescription+FZCDS.m in Sources */,
+				1D9575231A87EDEA00C8FBFE /* GRPWalkthroughViewController.m in Sources */,
 				4FFA913E1867A867003E2791 /* GRPRatingView.m in Sources */,
 				4FFA913B1867A5C3003E2791 /* GRPWineImageView.m in Sources */,
 				1D5FEFC01A4DCB47002213A6 /* FZCDSFetchController.m in Sources */,
 				1D5FEFF71A4DCB6E002213A6 /* FZViewModelBuilderGroupedByFirstLetter.m in Sources */,
 				1D5FF0031A4DCBEA002213A6 /* FZCDSCollectionController.m in Sources */,
+				1D9575261A87EE4700C8FBFE /* GRPCarouselCollectionViewDelegate.m in Sources */,
 				1D5FEFFA1A4DCB6E002213A6 /* FZViewModelBuilderGroupSquashing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1188,6 +1254,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Noah Blake (D22E5W7MUU)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Grapes/Grapes-Prefix.pch";
 				INFOPLIST_FILE = "Grapes/Grapes-Info.plist";
